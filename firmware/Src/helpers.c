@@ -4,40 +4,31 @@
 #include "helpers.h"
 #include "shared.h"
 
-uint8_t linear_buf_init(linear_buf *lb, uint16_t size)
+uint8_t eeprom_read(uint16_t address)
 {
-  lb->buf_size = size;
-  lb->buf = malloc(size);
-  lb->last_recv = 0;
-  linear_buf_reset(lb);
-  return 0;
+  uint8_t lower = address & 0xff;
+  uint8_t ret = 69;
+  HAL_I2C_Master_Transmit(&hi2c1, EEPROM_WRITE_ADDR, &lower, 1, 500);
+  HAL_I2C_Master_Receive(&hi2c1, EEPROM_READ_ADDR, &ret, 1, 1000);
+  return ret;
 }
 
-void linear_buf_reset(linear_buf *lb)
+void eeprom_write(uint16_t address, uint8_t data)
 {
-  lb->curr_index = 0;
-  memset(lb->buf, 0, lb->buf_size);
-}
-
-void linear_buf_add(linear_buf *lb, uint8_t c)
-{
-  if(c == '\r')
+  return;
+  if(eeprom_read(address) == data)
     return;
-  lb->buf[lb->curr_index] = c;
-  if(lb->curr_index < lb->buf_size)
-    lb->curr_index++;
-  lb->buf[lb->buf_size-1] = 0;
-  lb->last_recv = HAL_GetTick();
+  uint8_t upper_mask = (address >> 7) & 0x6;
+  uint8_t lower = address & 0xff;
+  uint8_t command_buf[2] = {lower, data};
+  HAL_I2C_Master_Transmit(&hi2c1, EEPROM_WRITE_ADDR | upper_mask, command_buf, 2, 500);
+  while(HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_WRITE_ADDR, 1, 500) != HAL_OK)
+    ;
 }
 
-uint8_t linear_buf_line_available(linear_buf *lb)
+void eeprom_erase(void)
 {
-  if(lb->curr_index >= lb->buf_size)
-  {
-    linear_buf_reset(lb);
-    return 0;
-  }
-  if(lb->buf[lb->curr_index - 1] == '\n')
-    return 1;
-  return 0;
+  return;
+  for (int i = 0; i < EEPROM_SIZE; ++i)
+    eeprom_write(i, 0xff);
 }

@@ -54,9 +54,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-linear_buf uart_lb;
-uint8_t uart_byte_buf[1];
-uint16_t keypad_buf;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,7 +77,7 @@ int fputc(int ch, FILE *f)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  linear_buf_add(&uart_lb, uart_byte_buf[0]);
+  //linear_buf_add(&uart_lb, uart_byte_buf[0]);
   // printf("%c", uart_byte_buf[0]);
 }
 /* USER CODE END 0 */
@@ -118,17 +116,34 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_Delay(500);
   printf("bobhack\n");
-  linear_buf_init(&uart_lb, 32);
-  
+
+  while (1)
+  {
+    printf("Scanning I2C bus...\n");
+    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
+    if(scan_result != 0)
+      printf("EEPROM not found, retrying...\n");
+    else
+      break;
+    HAL_Delay(500);
+  }
+  printf("Bob cassette found!\n");
+  HAL_Delay(500);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+
+  for (int i = 0; i < EEPROM_SIZE; i++)
+  {
+    uint8_t this_byte = eeprom_read(i);
+    printf("bobdump %d %d\n", i, this_byte);
+  }
+  printf("done!\n");
   while (1)
   {
     HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
-    printf("hello world\n");
     HAL_Delay(500);
 
   /* USER CODE END WHILE */

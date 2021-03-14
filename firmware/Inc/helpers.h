@@ -7,18 +7,13 @@
 
 #include "stm32f0xx_hal.h"
 
-typedef struct
-{
-  uint32_t last_recv;
-  uint16_t curr_index;
-  uint16_t buf_size;
-  uint8_t* buf;
-} linear_buf;
+#define EEPROM_SIZE 256
+#define EEPROM_READ_ADDR 0xA1
+#define EEPROM_WRITE_ADDR 0xA0
 
-uint8_t linear_buf_init(linear_buf *lb, uint16_t size);
-void linear_buf_reset(linear_buf *lb);
-void linear_buf_add(linear_buf *lb, uint8_t c);
-uint8_t linear_buf_line_available(linear_buf *lb);
+uint8_t eeprom_read(uint16_t address);
+void eeprom_write(uint16_t address, uint8_t data);
+void eeprom_erase(void);
 
 #ifdef __cplusplus
 }
