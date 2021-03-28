@@ -52,6 +52,8 @@ I2C_HandleTypeDef hi2c1;
 
 UART_HandleTypeDef huart2;
 
+PCD_HandleTypeDef hpcd_USB_FS;
+
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
@@ -62,6 +64,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_USB_PCD_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -113,37 +116,19 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(500);
   printf("bobhack\n");
 
-  while (1)
-  {
-    printf("Scanning I2C bus...\n");
-    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
-    if(scan_result != 0)
-      printf("EEPROM not found, retrying...\n");
-    else
-      break;
-    HAL_Delay(500);
-  }
-  printf("Bob cassette found!\n");
-  HAL_Delay(500);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-
-  for (int i = 0; i < EEPROM_SIZE; i++)
-  {
-    uint8_t this_byte = eeprom_read(i);
-    printf("bobdump %d %d\n", i, this_byte);
-  }
-  printf("done!\n");
   while (1)
   {
-    HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
+    HAL_GPIO_TogglePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin);
     HAL_Delay(500);
 
   /* USER CODE END WHILE */
@@ -191,8 +176,10 @@ void SystemClock_Config(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C1;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB|RCC_PERIPHCLK_I2C1;
   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_HSI;
+  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_HSI48;
+
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
@@ -265,6 +252,25 @@ static void MX_USART2_UART_Init(void)
 
 }
 
+/* USB init function */
+static void MX_USB_PCD_Init(void)
+{
+
+  hpcd_USB_FS.Instance = USB;
+  hpcd_USB_FS.Init.dev_endpoints = 8;
+  hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
+  hpcd_USB_FS.Init.ep0_mps = DEP0CTL_MPS_64;
+  hpcd_USB_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+  hpcd_USB_FS.Init.low_power_enable = DISABLE;
+  hpcd_USB_FS.Init.lpm_enable = DISABLE;
+  hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
+  if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
 /** Configure pins as 
         * Analog 
         * Input 
@@ -283,7 +289,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, LED_CARTOK_Pin|LED_DONE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : USER_BUTTON_Pin */
   GPIO_InitStruct.Pin = USER_BUTTON_Pin;
@@ -291,12 +297,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : USER_LED_Pin */
-  GPIO_InitStruct.Pin = USER_LED_Pin;
+  /*Configure GPIO pins : LED_CARTOK_Pin LED_DONE_Pin */
+  GPIO_InitStruct.Pin = LED_CARTOK_Pin|LED_DONE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(USER_LED_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 

@@ -10,6 +10,8 @@
 "pmm\stm32f0xx_hal_tim_ex.o"
 "pmm\stm32f0xx_hal_uart.o"
 "pmm\stm32f0xx_hal_uart_ex.o"
+"pmm\stm32f0xx_hal_pcd.o"
+"pmm\stm32f0xx_hal_pcd_ex.o"
 "pmm\stm32f0xx_hal_rcc.o"
 "pmm\stm32f0xx_hal_rcc_ex.o"
 "pmm\stm32f0xx_hal.o"

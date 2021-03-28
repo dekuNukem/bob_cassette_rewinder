@@ -1,16 +1,12 @@
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * @file    stm32f0xx_hal_pcd_ex.h
+  * @author  MCD Application Team
+  * @brief   Header file of PCD HAL Extension module.
   ******************************************************************************
-  ** This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
+  * @attention
   *
-  * COPYRIGHT(c) 2021 STMicroelectronics
+  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -35,48 +31,68 @@
   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H__
-#define __MAIN_H__
-
-/* Includes ------------------------------------------------------------------*/
-
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* Private define ------------------------------------------------------------*/
-
-#define USER_BUTTON_Pin GPIO_PIN_8
-#define USER_BUTTON_GPIO_Port GPIOB
-#define LED_CARTOK_Pin GPIO_PIN_0
-#define LED_CARTOK_GPIO_Port GPIOA
-#define LED_DONE_Pin GPIO_PIN_1
-#define LED_DONE_GPIO_Port GPIOA
-
-/* ########################## Assert Selection ############################## */
-/**
-  * @brief Uncomment the line below to expanse the "assert_param" macro in the 
-  *        HAL drivers code
-  */
-/* #define USE_FULL_ASSERT    1U */
-
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
+#ifndef __STM32F0xx_HAL_PCD_EX_H
+#define __STM32F0xx_HAL_PCD_EX_H
 
 #ifdef __cplusplus
  extern "C" {
 #endif
-void _Error_Handler(char *, int);
 
-#define Error_Handler() _Error_Handler(__FILE__, __LINE__)
+#if defined(STM32F042x6) || defined(STM32F048xx) || defined(STM32F072xB) || defined(STM32F078xx)|| defined(STM32F070xB)|| defined(STM32F070x6)
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_hal_def.h"  
+   
+/** @addtogroup STM32F0xx_HAL_Driver
+  * @{
+  */
+
+/** @addtogroup PCDEx
+  * @{
+  */ 
+
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* Exported macros -----------------------------------------------------------*/
+/* Internal macros -----------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/
+/** @addtogroup PCDEx_Exported_Functions PCDEx Exported Functions
+  * @{
+  */
+/** @addtogroup PCDEx_Exported_Functions_Group1 Peripheral Control functions
+  * @{
+  */   
+HAL_StatusTypeDef HAL_PCDEx_PMAConfig(PCD_HandleTypeDef *hpcd, 
+                                     uint16_t ep_addr,
+                                     uint16_t ep_kind,
+                                     uint32_t pmaadress);
+/**
+  * @}
+  */ 
+  
+/**
+  * @}
+  */ 
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */   
+
+#endif /* STM32F042x6 || STM32F072xB || STM32F078xx || STM32F070xB || STM32F070x6*/
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __MAIN_H__ */
+
+#endif /* __STM32F0xx_HAL_PCD_EX_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
