@@ -30,6 +30,12 @@ pmm\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h
 pmm\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
 pmm\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 pmm\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
+pmm\main.o: ../Inc/usb_device.h
+pmm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+pmm\main.o: ../Inc/usbd_conf.h
+pmm\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 pmm\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+pmm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 pmm\main.o: ../Inc/helpers.h
 pmm\main.o: ../Inc/shared.h
+pmm\main.o: ../Inc/my_usb.h

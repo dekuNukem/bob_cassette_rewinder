@@ -34,3 +34,4 @@ pmm\helpers.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
 pmm\helpers.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 pmm\helpers.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
 pmm\helpers.o: ../Inc/shared.h
+pmm\helpers.o: ../Inc/my_usb.h
