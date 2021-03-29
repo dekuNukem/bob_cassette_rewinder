@@ -52,3 +52,40 @@
 
   }
   /* USER CODE END 3 */
+
+  printf("hello world\n");
+    HAL_Delay(500);
+
+    parse_cmd(my_usb_readline());
+
+  while (1)
+  {
+
+    cart_scan:
+    HAL_Delay(500);
+    printf("Scanning I2C bus...\n");
+    if(HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50) != 0)
+    {
+      printf("EEPROM not found, retrying...\n");
+      HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_SET);
+      goto cart_scan;
+    }
+    HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET);
+    }
+
+  while (1)
+  {
+    HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_SET);
+    printf("Scanning I2C bus...\n");
+    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
+    if(scan_result != 0)
+      printf("EEPROM not found, retrying...\n");
+    else
+    {
+      HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET);
+      break;
+    }
+    HAL_Delay(500);
+  }
+  
+  // 

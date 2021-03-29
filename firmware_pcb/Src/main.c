@@ -136,19 +136,6 @@ int main(void)
   // linear_buf_init(&uart_lb, 32);
   my_usb_init();
 
-  while (1)
-  {
-    printf("Scanning I2C bus...\n");
-    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
-    if(scan_result != 0)
-      printf("EEPROM not found, retrying...\n");
-    else
-      break;
-    HAL_Delay(500);
-  }
-  
-  // HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -156,12 +143,29 @@ int main(void)
 
   while (1)
   {
+
+    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
+    if(scan_result == 0)
+      HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET);
+    else
+      HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_SET);
+
+    uint8_t button_result = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
+
+    if(scan_result == 0 && button_result == 1)
+    {
+      for (int i = 0; i < EEPROM_SIZE; i++)
+      {
+        uint8_t this_byte = eeprom_read(i);
+        printf("bobdump %d %d\n", i, this_byte);
+      }
+      printf("done!\n");
+      HAL_Delay(1000);
+    }
+
+    // printf("%d %d\n", scan_result, button_result);
+    HAL_Delay(250);
     
-    printf("hello world\n");
-    HAL_Delay(500);
-
-    parse_cmd(my_usb_readline());
-
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -301,7 +305,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_CARTOK_Pin|LED_DONE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_CARTOK_Pin|LED_DONE_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : USER_BUTTON_Pin */
   GPIO_InitStruct.Pin = USER_BUTTON_Pin;
