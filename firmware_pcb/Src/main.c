@@ -184,6 +184,7 @@ int main(void)
     if(i2c_scan_result == 0 && button_result == 1 && is_done == 0)
     {
       // change the byte here
+      eeprom_write(0xa1, 0x4e);
       printf("done!\n");
       HAL_GPIO_WritePin(LED_DONE_GPIO_Port, LED_DONE_Pin, GPIO_PIN_RESET);
       is_done = 1;

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [pmm\pmm.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image pmm\pmm.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Mar 29 11:43:24 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Mar 29 13:00:14 2021
 <BR><P>
 <H3>Maximum Stack Usage =        220 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -76,7 +76,7 @@ Function Pointers
  <LI><a href="#[35]">USB_IRQHandler</a> from stm32f0xx_it.o(i.USB_IRQHandler) referenced from startup_stm32f042x6.o(RESET)
  <LI><a href="#[1b]">WWDG_IRQHandler</a> from startup_stm32f042x6.o(.text) referenced from startup_stm32f042x6.o(RESET)
  <LI><a href="#[38]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_stm32f042x6.o(.text)
- <LI><a href="#[3a]">fputc</a> from main.o(i.fputc) referenced from printf3.o(i.__0printf$3)
+ <LI><a href="#[3a]">fputc</a> from main.o(i.fputc) referenced from printf1.o(i.__0printf$1)
  <LI><a href="#[36]">main</a> from main.o(i.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P>
@@ -86,7 +86,7 @@ Global Symbols
 <P><STRONG><a name="[38]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f042x6.o(.text)
 </UL>
-<P><STRONG><a name="[e1]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[e2]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[3b]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -96,15 +96,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[e2]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[e3]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[e3]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[e4]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[e4]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[e5]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[e5]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[e6]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[e6]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[e7]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[15]"></a>Reset_Handler</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, startup_stm32f042x6.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f042x6.o(RESET)
@@ -185,7 +185,7 @@ Global Symbols
 <P><STRONG><a name="[1b]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f042x6.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f042x6.o(RESET)
 </UL>
-<P><STRONG><a name="[e7]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[e8]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[59]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_uidivmod
@@ -203,34 +203,34 @@ Global Symbols
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[e8]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[e9]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[e9]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[ea]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[3d]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_reset
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_reset
 </UL>
 
-<P><STRONG><a name="[de]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
+<P><STRONG><a name="[df]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
 </UL>
 
-<P><STRONG><a name="[ea]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[eb]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[3f]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[e0]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
+<P><STRONG><a name="[e1]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
 </UL>
 
-<P><STRONG><a name="[df]"></a>strcpy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, strcpy.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
+<P><STRONG><a name="[e0]"></a>strcpy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, strcpy.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
 </UL>
 
 <P><STRONG><a name="[3c]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
@@ -239,11 +239,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[eb]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[ec]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[ec]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[ed]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[ed]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[ee]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[46]"></a>CDC_Transmit_FS</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, usbd_cdc_if.o(i.CDC_Transmit_FS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = CDC_Transmit_FS &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; PCD_WritePMA
@@ -251,7 +251,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CDC_TransmitPacket
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CDC_SetTxBuffer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_putchar
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_putchar
 </UL>
 
 <P><STRONG><a name="[89]"></a>HAL_DMA_Abort_IT</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, stm32f0xx_hal_dma.o(i.HAL_DMA_Abort_IT))
@@ -276,7 +276,7 @@ Global Symbols
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 </UL>
 
-<P><STRONG><a name="[dd]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f0xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
+<P><STRONG><a name="[de]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f0xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -292,13 +292,13 @@ Global Symbols
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IWDG_Init
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_putchar
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_putchar
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Receive
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_add
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_add
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnTXISFlagUntilTimeout
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnSTOPFlagUntilTimeout
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnRXNEFlagUntilTimeout
@@ -335,6 +335,7 @@ Global Symbols
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_write
 </UL>
 
 <P><STRONG><a name="[4d]"></a>HAL_I2C_Master_Receive</STRONG> (Thumb, 274 bytes, Stack size 40 bytes, stm32f0xx_hal_i2c.o(i.HAL_I2C_Master_Receive))
@@ -358,7 +359,8 @@ Global Symbols
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransferConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_write
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
 </UL>
 
 <P><STRONG><a name="[4a]"></a>HAL_I2C_MspInit</STRONG> (Thumb, 58 bytes, Stack size 32 bytes, stm32f0xx_hal_msp.o(i.HAL_I2C_MspInit))
@@ -377,7 +379,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[da]"></a>HAL_IWDG_Refresh</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f0xx_hal_iwdg.o(i.HAL_IWDG_Refresh))
+<P><STRONG><a name="[db]"></a>HAL_IWDG_Refresh</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f0xx_hal_iwdg.o(i.HAL_IWDG_Refresh))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -675,7 +677,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[d9]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f0xx_hal_tim.o(i.HAL_TIM_Base_Start_IT))
+<P><STRONG><a name="[da]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f0xx_hal_tim.o(i.HAL_TIM_Base_Start_IT))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1319,17 +1321,17 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Error_Handler
 </UL>
 
-<P><STRONG><a name="[cf]"></a>__0printf$3</STRONG> (Thumb, 24 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3), UNUSED)
+<P><STRONG><a name="[cf]"></a>__0printf$1</STRONG> (Thumb, 24 bytes, Stack size 24 bytes, printf1.o(i.__0printf$1), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[ee]"></a>__1printf$3</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3), UNUSED)
+<P><STRONG><a name="[ef]"></a>__1printf$1</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf1.o(i.__0printf$1), UNUSED)
 
-<P><STRONG><a name="[d7]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3))
+<P><STRONG><a name="[d8]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf1.o(i.__0printf$1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
 </UL>
 
 <P><STRONG><a name="[ba]"></a>__ARM_common_switch8</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32f0xx_hal_tim.o(i.__ARM_common_switch8))
@@ -1339,11 +1341,11 @@ Global Symbols
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_StdDevReq
 </UL>
 
-<P><STRONG><a name="[ef]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[f0]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[f0]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[f1]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[f1]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[f2]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[d1]"></a>eeprom_read</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, helpers.o(i.eeprom_read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = eeprom_read &rArr; HAL_I2C_Master_Receive &rArr; I2C_WaitOnRXNEFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
@@ -1351,18 +1353,29 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Receive
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_write
+</UL>
+
+<P><STRONG><a name="[d2]"></a>eeprom_write</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, helpers.o(i.eeprom_write))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = eeprom_write &rArr; eeprom_read &rArr; HAL_I2C_Master_Receive &rArr; I2C_WaitOnRXNEFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+</UL>
+<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
+</UL>
+<BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[3a]"></a>fputc</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, main.o(i.fputc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = fputc &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_putchar
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_putchar
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> printf3.o(i.__0printf$3)
+<BR>[Address Reference Count : 1]<UL><LI> printf1.o(i.__0printf$1)
 </UL>
-<P><STRONG><a name="[d3]"></a>linear_buf_add</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, helpers.o(i.linear_buf_add))
+<P><STRONG><a name="[d4]"></a>linear_buf_add</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, helpers.o(i.linear_buf_add))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = linear_buf_add
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -1373,67 +1386,68 @@ Global Symbols
 <P><STRONG><a name="[44]"></a>linear_buf_add_str</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, helpers.o(i.linear_buf_add_str))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = linear_buf_add_str &rArr; linear_buf_add
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_add
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_add
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Receive_FS
 </UL>
 
-<P><STRONG><a name="[d4]"></a>linear_buf_init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, helpers.o(i.linear_buf_init))
+<P><STRONG><a name="[d5]"></a>linear_buf_init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, helpers.o(i.linear_buf_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = linear_buf_init &rArr; malloc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_reset
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_reset
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_init
+<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_init
 </UL>
 
-<P><STRONG><a name="[d6]"></a>linear_buf_reset</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, helpers.o(i.linear_buf_reset))
+<P><STRONG><a name="[d7]"></a>linear_buf_reset</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, helpers.o(i.linear_buf_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = linear_buf_reset
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_init
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_init
 </UL>
 
-<P><STRONG><a name="[36]"></a>main</STRONG> (Thumb, 238 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[36]"></a>main</STRONG> (Thumb, 246 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 188<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_RCC_GetSysClockFreq &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USB_DEVICE_Init
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IWDG_Refresh
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IWDG_Refresh
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IWDG_Init
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART2_UART_Init
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_I2C1_Init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_init
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_readline
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_usb_init
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_cmd
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_write
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[d5]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc))
+<P><STRONG><a name="[d6]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_init
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_init
 </UL>
 
-<P><STRONG><a name="[d8]"></a>my_usb_init</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, my_usb.o(i.my_usb_init))
+<P><STRONG><a name="[d9]"></a>my_usb_init</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, my_usb.o(i.my_usb_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = my_usb_init &rArr; linear_buf_init &rArr; malloc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_init
+<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d2]"></a>my_usb_putchar</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, my_usb.o(i.my_usb_putchar))
+<P><STRONG><a name="[d3]"></a>my_usb_putchar</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, my_usb.o(i.my_usb_putchar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = my_usb_putchar &rArr; CDC_Transmit_FS &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; PCD_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Transmit_FS
@@ -1442,23 +1456,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
-<P><STRONG><a name="[db]"></a>my_usb_readline</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, my_usb.o(i.my_usb_readline))
+<P><STRONG><a name="[dc]"></a>my_usb_readline</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, my_usb.o(i.my_usb_readline))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = my_usb_readline &rArr; linear_buf_reset
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_reset
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;linear_buf_reset
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[dc]"></a>parse_cmd</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, helpers.o(i.parse_cmd))
+<P><STRONG><a name="[dd]"></a>parse_cmd</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, helpers.o(i.parse_cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = parse_cmd &rArr; eeprom_read &rArr; HAL_I2C_Master_Receive &rArr; I2C_WaitOnRXNEFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1561,9 +1575,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Receive
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
 </UL>
 
 <P><STRONG><a name="[4f]"></a>I2C_WaitOnRXNEFlagUntilTimeout</STRONG> (Thumb, 114 bytes, Stack size 32 bytes, stm32f0xx_hal_i2c.o(i.I2C_WaitOnRXNEFlagUntilTimeout))
@@ -1680,10 +1694,10 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usbd_cdc.o(.data)
 </UL>
-<P><STRONG><a name="[d0]"></a>_printf_core</STRONG> (Thumb, 456 bytes, Stack size 88 bytes, printf3.o(i._printf_core), UNUSED)
+<P><STRONG><a name="[d0]"></a>_printf_core</STRONG> (Thumb, 332 bytes, Stack size 88 bytes, printf1.o(i._printf_core), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$3
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$1
 </UL>
 <P>
 <H3>

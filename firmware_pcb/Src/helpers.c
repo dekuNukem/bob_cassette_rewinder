@@ -19,13 +19,11 @@ uint8_t eeprom_read(uint16_t address)
 
 void eeprom_write(uint16_t address, uint8_t data)
 {
-  return;
   if(eeprom_read(address) == data)
     return;
-  uint8_t upper_mask = (address >> 7) & 0x6;
   uint8_t lower = address & 0xff;
   uint8_t command_buf[2] = {lower, data};
-  HAL_I2C_Master_Transmit(&hi2c1, EEPROM_WRITE_ADDR | upper_mask, command_buf, 2, 500);
+  HAL_I2C_Master_Transmit(&hi2c1, EEPROM_WRITE_ADDR, command_buf, 2, 500);
   while(HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_WRITE_ADDR, 1, 500) != HAL_OK)
     ;
 }
@@ -41,7 +39,7 @@ void parse_cmd(char* cmd)
 {
   if(cmd == NULL)
     return;
-  printf("received: %s\n", cmd);
+  // printf("received: %s\n", cmd);
   if(strcmp(cmd, "bobdump") == 0)
   {
     if(i2c_scan_result != 0)
@@ -52,6 +50,7 @@ void parse_cmd(char* cmd)
     is_busy = 1;
     for (int i = 0; i < EEPROM_SIZE; i++)
       printf("bobdump %d %d\n", i, eeprom_read(i));
+    printf("bobdump done!\n");
     is_busy = 0;
   }
   // else if(strncmp(cmd, "save ", 5) == 0)
