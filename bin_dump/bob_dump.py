@@ -65,4 +65,7 @@ left        addr 0xa1
 .
 0           0x50
 
+
+amusing values: 0x3f = 111 washes, 0x4f = 31 washes
+
 """
