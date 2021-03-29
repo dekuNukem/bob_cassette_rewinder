@@ -87,7 +87,7 @@ static void MX_I2C1_Init(void);
 int fputc(int ch, FILE *f)
 {
   my_usb_putchar((uint8_t)ch);
-  // HAL_UART_Transmit(&huart2, (unsigned char *)&ch, 1, 100);
+  HAL_UART_Transmit(&huart2, (unsigned char *)&ch, 1, 100);
   return ch;
 }
 
@@ -136,6 +136,19 @@ int main(void)
   // linear_buf_init(&uart_lb, 32);
   my_usb_init();
 
+  while (1)
+  {
+    printf("Scanning I2C bus...\n");
+    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
+    if(scan_result != 0)
+      printf("EEPROM not found, retrying...\n");
+    else
+      break;
+    HAL_Delay(500);
+  }
+  
+  // HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -143,9 +156,9 @@ int main(void)
 
   while (1)
   {
-    // HAL_GPIO_TogglePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin);
-    // printf("hello world\n");
-    // HAL_Delay(500);
+    
+    printf("hello world\n");
+    HAL_Delay(500);
 
     parse_cmd(my_usb_readline());
 
