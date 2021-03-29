@@ -11,6 +11,9 @@
 #define EEPROM_READ_ADDR 0xA1
 #define EEPROM_WRITE_ADDR 0xA0
 
+extern volatile uint8_t is_busy;
+extern volatile uint8_t i2c_scan_result;
+
 typedef struct
 {
   int32_t last_recv;

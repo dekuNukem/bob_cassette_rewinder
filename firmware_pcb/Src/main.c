@@ -62,13 +62,14 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
+TIM_HandleTypeDef htim17;
+
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
-// linear_buf uart_lb;
-// uint8_t uart_byte_buf[1];
+volatile uint8_t is_done;
 
 /* USER CODE END PV */
 
@@ -77,6 +78,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM17_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -96,6 +98,16 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   //linear_buf_add(&uart_lb, uart_byte_buf[0]);
   // printf("%c", uart_byte_buf[0]);
 }
+
+// this happens every 250ms
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if(is_busy)
+    return;
+  i2c_scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
+  // printf("%d\n", i2c_scan_result);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -130,12 +142,14 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   MX_USB_DEVICE_Init();
+  MX_TIM17_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(500);
   printf("bobhack\n");
   // linear_buf_init(&uart_lb, 32);
   my_usb_init();
-
+  i2c_scan_result = 1;
+  HAL_TIM_Base_Start_IT(&htim17);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -143,28 +157,30 @@ int main(void)
 
   while (1)
   {
+    parse_cmd(my_usb_readline());
 
-    uint8_t scan_result = HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_READ_ADDR, 1, 50);
-    if(scan_result == 0)
-      HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET);
-    else
+    if(i2c_scan_result == 0) // if cassette is found 
+    {
+      HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_RESET); // turn on CART_OK LED
+    }
+    else // if no cassette detected
+    {
+      // turn off both CART_OK and DONE LED
       HAL_GPIO_WritePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LED_DONE_GPIO_Port, LED_DONE_Pin, GPIO_PIN_SET);
+      is_done = 0;
+    }
 
     uint8_t button_result = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
 
-    if(scan_result == 0 && button_result == 1)
+    if(i2c_scan_result == 0 && button_result == 1 && is_done == 0)
     {
-      for (int i = 0; i < EEPROM_SIZE; i++)
-      {
-        uint8_t this_byte = eeprom_read(i);
-        printf("bobdump %d %d\n", i, this_byte);
-      }
+      // change the byte here
       printf("done!\n");
-      HAL_Delay(1000);
+      HAL_GPIO_WritePin(LED_DONE_GPIO_Port, LED_DONE_Pin, GPIO_PIN_RESET);
+      is_done = 1;
     }
 
-    // printf("%d %d\n", scan_result, button_result);
-    HAL_Delay(250);
     
   /* USER CODE END WHILE */
 
@@ -260,6 +276,24 @@ static void MX_I2C1_Init(void)
     /**Configure Digital filter 
     */
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+/* TIM17 init function */
+static void MX_TIM17_Init(void)
+{
+
+  htim17.Instance = TIM17;
+  htim17.Init.Prescaler = 47999;
+  htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim17.Init.Period = 250;
+  htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim17.Init.RepetitionCounter = 0;
+  htim17.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim17) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }

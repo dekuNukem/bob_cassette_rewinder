@@ -5,6 +5,9 @@
 #include "shared.h"
 #include "my_usb.h"
 
+volatile uint8_t is_busy;
+volatile uint8_t i2c_scan_result;
+
 uint8_t eeprom_read(uint16_t address)
 {
   uint8_t lower = address & 0xff;
@@ -39,27 +42,18 @@ void parse_cmd(char* cmd)
   if(cmd == NULL)
     return;
   printf("received: %s\n", cmd);
-  // if(strcmp(cmd, "show") == 0)
-  // {
-  //   memset(temp_buf, 0, TEMP_BUF_SIZE);
-  //   sprintf(temp_buf, "dt_tx: %d %d %d %d %d %d %d %d %d %d %d %d %d %d",
-  //       daytripper_config.refresh_rate_Hz,
-  //       daytripper_config.nr_sensitivity,
-  //       daytripper_config.tof_timing_budget_ms,
-  //       daytripper_config.tof_range_max_cm_div2,
-  //       daytripper_config.tof_range_min_cm_div2,
-  //       daytripper_config.use_led,
-  //       daytripper_config.op_mode,
-  //       daytripper_config.print_debug_info,
-  //       daytripper_config.tx_wireless_channel,
-  //       daytripper_config.hardware_id,
-  //       daytripper_config.tof_model_id,
-  //       fw_version_major,
-  //       fw_version_minor,
-  //       fw_version_patch
-  //       );
-  //   puts(temp_buf);
-  // }
+  if(strcmp(cmd, "bobdump") == 0)
+  {
+    if(i2c_scan_result != 0)
+    {
+      printf("no bob cassette detected!\n");
+      return;
+    }
+    is_busy = 1;
+    for (int i = 0; i < EEPROM_SIZE; i++)
+      printf("bobdump %d %d\n", i, eeprom_read(i));
+    is_busy = 0;
+  }
   // else if(strncmp(cmd, "save ", 5) == 0)
   //   save_config(cmd);
 }

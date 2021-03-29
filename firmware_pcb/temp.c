@@ -89,3 +89,9 @@
   }
   
   // 
+
+do
+      {
+        HAL_Delay(200); // wait in a loop after renew is done, so user wont do it multiple times
+      }
+      while(i2c_scan_result == 0);
