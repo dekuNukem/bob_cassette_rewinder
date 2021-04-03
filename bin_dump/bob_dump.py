@@ -23,7 +23,7 @@ while 1:
     this_line = ser.readline().decode('utf-8')
     print(this_line)
     if 'done' in this_line.lower():
-        break;
+        break
     if 'dump' in this_line:
         addr = int(this_line.split(' ')[1])
         data = int(this_line.split(' ')[2])
@@ -38,8 +38,15 @@ byte_list = []
 for i in range(len(bin_dict)):
     byte_list.append(bin_dict[i])
 
+byte_str = ''
+for item in byte_list:
+    if 32 <= item <= 126:
+        byte_str += chr(item)
+    else:
+        byte_str += ' '
+
 print(bin_dict)
-print(bytes(byte_list))
+print(byte_str)
 
 filename = input("\n\nfilename?\n")
 if len(filename) > 0:
