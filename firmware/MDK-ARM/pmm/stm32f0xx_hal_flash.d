@@ -24,7 +24,12 @@ pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_fla
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h
+pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_iwdg.h
+pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h
+pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
+pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
+pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 pmm\stm32f0xx_hal_flash.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
