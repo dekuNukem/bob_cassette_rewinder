@@ -95,3 +95,11 @@ do
         HAL_Delay(200); // wait in a loop after renew is done, so user wont do it multiple times
       }
       while(i2c_scan_result == 0);
+
+
+void eeprom_erase(void)
+{
+  return;
+  for (int i = 0; i < EEPROM_SIZE; ++i)
+    eeprom_write(i, 0xff);
+}

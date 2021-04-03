@@ -89,17 +89,19 @@ static void MX_IWDG_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+
+void set_version(void)
+{
+	fw_version_major = 0;
+	fw_version_minor = 1;
+	fw_version_patch = 0;
+}
+
 int fputc(int ch, FILE *f)
 {
   my_usb_putchar((uint8_t)ch);
   HAL_UART_Transmit(&huart2, (unsigned char *)&ch, 1, 100);
   return ch;
-}
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-  //linear_buf_add(&uart_lb, uart_byte_buf[0]);
-  // printf("%c", uart_byte_buf[0]);
 }
 
 // this happens every 250ms
@@ -148,10 +150,10 @@ int main(void)
   MX_TIM17_Init();
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
+  set_version();
   HAL_Delay(500);
-  printf("\n\nBob cassette renewer\n");
+  printf("\n\nBob cassette rewinder\n");
   printf("dekuNukem 2021\n");
-  // linear_buf_init(&uart_lb, 32);
   my_usb_init();
   i2c_scan_result = 1;
   HAL_TIM_Base_Start_IT(&htim17);

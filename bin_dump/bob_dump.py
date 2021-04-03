@@ -17,16 +17,14 @@ ser = serial.Serial(sys.argv[1], 115200)
 
 bin_dict = {}
 
-ser.write("bobdump\n".encode())
+ser.write("dump\n".encode())
 
 while 1:
     this_line = ser.readline().decode('utf-8')
     print(this_line)
-    if 'received' in this_line:
-        continue
     if 'done' in this_line.lower():
         break;
-    if 'bobdump' in this_line:
+    if 'dump' in this_line:
         addr = int(this_line.split(' ')[1])
         data = int(this_line.split(' ')[2])
         bin_dict[addr] = data

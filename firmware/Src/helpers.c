@@ -8,6 +8,14 @@
 volatile uint8_t is_busy;
 volatile uint8_t i2c_scan_result;
 
+uint8_t fw_version_major;
+uint8_t fw_version_minor;
+uint8_t fw_version_patch;
+
+char *addr_start;
+char *value_start;
+uint8_t addr_to_write, value_to_write;
+
 uint8_t eeprom_read(uint16_t address)
 {
   uint8_t lower = address & 0xff;
@@ -28,11 +36,21 @@ void eeprom_write(uint16_t address, uint8_t data)
     ;
 }
 
-void eeprom_erase(void)
+char* goto_next_arg(char* buf)
 {
-  return;
-  for (int i = 0; i < EEPROM_SIZE; ++i)
-    eeprom_write(i, 0xff);
+  char* curr = buf;
+  if(curr == NULL)
+    return NULL;
+  char* buf_end = curr + strlen(curr);
+  if(curr >= buf_end)
+    return NULL;
+  while(curr < buf_end && *curr != ' ')
+      curr++;
+  while(curr < buf_end && *curr == ' ')
+      curr++;
+  if(curr >= buf_end)
+    return NULL;
+  return curr;
 }
 
 void parse_cmd(char* cmd)
@@ -40,8 +58,9 @@ void parse_cmd(char* cmd)
   if(cmd == NULL)
     return;
   // printf("received: %s\n", cmd);
-  if(strcmp(cmd, "bobdump") == 0)
+  if(strcmp(cmd, "dump") == 0)
   {
+    printf("FW V%d.%d.%d\n", fw_version_major, fw_version_minor, fw_version_patch);
     if(i2c_scan_result != 0)
     {
       printf("no bob cassette detected!\n");
@@ -49,14 +68,32 @@ void parse_cmd(char* cmd)
     }
     is_busy = 1;
     for (int i = 0; i < EEPROM_SIZE; i++)
-      printf("bobdump %d %d\n", i, eeprom_read(i));
-    printf("bobdump done!\n");
+      printf("dump %d %d\n", i, eeprom_read(i));
     is_busy = 0;
+    printf("dump done!\n");
   }
-  // else if(strncmp(cmd, "save ", 5) == 0)
-  //   save_config(cmd);
+  else if(strncmp(cmd, "write ", 6) == 0)
+  {
+    if(i2c_scan_result != 0)
+    {
+      printf("no bob cassette detected!\n");
+      return;
+    }
+    addr_start = goto_next_arg(cmd);
+    value_start = goto_next_arg(addr_start);
+    if(addr_start == NULL || value_start == NULL)
+    {
+      printf("invalid args\n");
+      return;
+    }
+    addr_to_write = atoi(addr_start);
+    value_to_write = atoi(value_start);
+    is_busy = 1;
+    eeprom_write(addr_to_write, value_to_write);
+    is_busy = 0;
+    printf("done %d %d\n", addr_to_write, value_to_write);
+  }
 }
-
 
 uint8_t linear_buf_init(linear_buf *lb, int32_t size)
 {

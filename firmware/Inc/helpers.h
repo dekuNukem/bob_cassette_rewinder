@@ -14,6 +14,10 @@
 extern volatile uint8_t is_busy;
 extern volatile uint8_t i2c_scan_result;
 
+extern uint8_t fw_version_major;
+extern uint8_t fw_version_minor;
+extern uint8_t fw_version_patch;
+
 typedef struct
 {
   int32_t last_recv;
@@ -30,7 +34,6 @@ void parse_cmd(char* cmd);
 
 uint8_t eeprom_read(uint16_t address);
 void eeprom_write(uint16_t address, uint8_t data);
-void eeprom_erase(void);
 
 #ifdef __cplusplus
 }
