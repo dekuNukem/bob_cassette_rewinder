@@ -4450,40 +4450,40 @@ by exp-lbrs.ulp</description>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="R1" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5.1K"/>
 <part name="R2" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5.1K"/>
-<part name="C1" library="clock" deviceset="CAP" device="0805" value="10uF"/>
+<part name="C1" library="clock" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC3" library="tx" deviceset="STM32F042F4" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="C4" library="clock" deviceset="CAP" device="0805" value="100nF"/>
+<part name="C4" library="clock" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SW3" library="3pos_slide_switch_centered" deviceset="324_SW" device="" value="324_SW"/>
 <part name="SW4" library="3pos_slide_switch_centered" deviceset="324_SW" device="" value="324_SW"/>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="2K"/>
+<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="+3V9" library="backplane" deviceset="+3V3" device=""/>
 <part name="+3V16" library="backplane" deviceset="+3V3" device=""/>
 <part name="LED2" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="2K"/>
+<part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="GND9" library="backplane" deviceset="GND" device=""/>
 <part name="+3V2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="R5" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="10K"/>
+<part name="R5" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5.1K"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pmm" deviceset="PINHEAD_PINHD-2X4" device=""/>
 <part name="U4" library="3pos_slide_switch" deviceset="XC6206_DEV" device=""/>
-<part name="C2" library="clock" deviceset="CAP" device="0805" value="10uF"/>
+<part name="C2" library="clock" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND2" library="backplane" deviceset="GND" device=""/>
 <part name="+3V3" library="backplane" deviceset="+3V3" device=""/>
 <part name="LED3" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="2K"/>
+<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="+3V4" library="backplane" deviceset="+3V3" device=""/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND3" library="backplane" deviceset="GND" device=""/>
-<part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="2K"/>
+<part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP10SQ" package3d_urn="urn:adsk.eagle:package:27962/1" value="TPSQTP10SQ"/>
 <part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP10SQ" package3d_urn="urn:adsk.eagle:package:27962/1" value="TPSQTP10SQ"/>
 <part name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP10SQ" package3d_urn="urn:adsk.eagle:package:27962/1" value="TPSQTP10SQ"/>

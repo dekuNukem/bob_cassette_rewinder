@@ -8,7 +8,7 @@
 </settings>
 <grid distance="1" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -28,13 +28,13 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -46,9 +46,9 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
@@ -58,7 +58,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
@@ -751,11 +751,11 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="R2" library="joyAnalog" package="0805" value="5.1K" x="19.304" y="20.193" smashed="yes">
 <attribute name="NAME" x="17.6956" y="20.5478" size="0.8128" layer="25" rot="R180"/>
 </element>
-<element name="C1" library="clock" package="0805@1" value="10uF" x="23.3678" y="28.2666" smashed="yes" rot="R180">
+<element name="C1" library="clock" package="0805@1" value="1uF" x="23.3678" y="28.2666" smashed="yes" rot="R180">
 <attribute name="NAME" x="26.0856" y="28.5841" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="IC3" library="tx" package="TSSOP20" value="STM32F042F4" x="15" y="6" smashed="yes" rot="R270"/>
-<element name="C4" library="clock" package="0805@1" value="100nF" x="23.3678" y="22.2666" smashed="yes">
+<element name="C4" library="clock" package="0805@1" value="1uF" x="23.3678" y="22.2666" smashed="yes">
 <attribute name="NAME" x="20.777" y="21.7967" size="0.8128" layer="25"/>
 </element>
 <element name="SW3" library="3pos_slide_switch_centered" package="342_SWICH_FOOT" value="324_SW" x="25" y="5" smashed="yes" rot="R180"/>
@@ -763,16 +763,16 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="LED1" library="adafruit" package="CHIP-LED0805" value="" x="5" y="19" smashed="yes" rot="R270">
 <attribute name="VALUE" x="3.73" y="16.46" size="1.27" layer="27"/>
 </element>
-<element name="R4" library="SparkFun-Passives" package="0805" value="2K" x="5" y="17" smashed="yes">
+<element name="R4" library="SparkFun-Passives" package="0805" value="1K" x="5" y="17" smashed="yes">
 <attribute name="NAME" x="6.5494" y="16.1491" size="0.8128" layer="25"/>
 </element>
 <element name="LED2" library="adafruit" package="CHIP-LED0805" value="" x="5" y="26" smashed="yes" rot="R270">
 <attribute name="VALUE" x="3.73" y="23.46" size="1.27" layer="27"/>
 </element>
-<element name="R6" library="SparkFun-Passives" package="0805" value="2K" x="4.9784" y="23.9268" smashed="yes">
+<element name="R6" library="SparkFun-Passives" package="0805" value="1K" x="4.9784" y="23.9268" smashed="yes">
 <attribute name="NAME" x="6.731" y="23.5077" size="0.8128" layer="25"/>
 </element>
-<element name="R5" library="joyAnalog" package="0805" value="10K" x="9.4996" y="5" smashed="yes" rot="R90">
+<element name="R5" library="joyAnalog" package="0805" value="5.1K" x="9.4996" y="5" smashed="yes" rot="R90">
 <attribute name="NAME" x="10.2781" y="4.9784" size="0.8128" layer="25" rot="R270"/>
 </element>
 <element name="JP1" library="pmm" package="PINHEAD_2X04" value="" x="15" y="15" smashed="yes">
@@ -780,20 +780,20 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <attribute name="VALUE" x="9.92" y="10.555" size="1.27" layer="27"/>
 </element>
 <element name="U4" library="3pos_slide_switch" package="SOT23R_INFINEON" value="XC6206_DEV" x="23.3678" y="25.2666" smashed="yes"/>
-<element name="C2" library="clock" package="0805@1" value="10uF" x="20.2692" y="7.7762" smashed="yes" rot="R270">
+<element name="C2" library="clock" package="0805@1" value="1uF" x="20.2692" y="7.7762" smashed="yes" rot="R270">
 <attribute name="NAME" x="20.0114" y="9.4107" size="0.8128" layer="25"/>
 </element>
 <element name="LED3" library="adafruit" package="CHIP-LED0805" value="" x="5" y="12" smashed="yes" rot="R270">
 <attribute name="VALUE" x="3.73" y="9.46" size="1.27" layer="27"/>
 </element>
-<element name="R3" library="SparkFun-Passives" package="0805" value="2K" x="5" y="10" smashed="yes">
+<element name="R3" library="SparkFun-Passives" package="0805" value="1K" x="5" y="10" smashed="yes">
 <attribute name="NAME" x="6.7272" y="9.5555" size="0.8128" layer="25"/>
 </element>
 <element name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X06" package3d_urn="urn:adsk.eagle:package:22472/2" value="" x="27.5" y="17" smashed="yes" rot="R90">
 <attribute name="POPULARITY" value="79" x="27.5" y="17" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="30.675" y="9.38" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="R7" library="SparkFun-Passives" package="0805" value="2K" x="10.287" y="10.2362" smashed="yes" rot="R180">
+<element name="R7" library="SparkFun-Passives" package="0805" value="1K" x="10.287" y="10.2362" smashed="yes" rot="R180">
 <attribute name="NAME" x="10.8458" y="9.2329" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP10SQ" package3d_urn="urn:adsk.eagle:package:27962/1" value="TPSQTP10SQ" x="19.7612" y="5.1308" smashed="yes">
@@ -926,9 +926,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="14.25" y1="22.3025" x2="14.25" y2="21.1322" width="0.1524" layer="1"/>
 <wire x1="14.25" y1="22.3025" x2="14.25" y2="23.3686" width="0.1524" layer="1"/>
 <wire x1="14.25" y1="23.3686" x2="14.5034" y2="23.622" width="0.1524" layer="1"/>
-<wire x1="14.5034" y1="23.622" x2="14.9606" y2="23.622" width="0.1524" layer="1"/>
-<wire x1="15.25" y1="23.3326" x2="15.25" y2="22.3025" width="0.1524" layer="1"/>
-<wire x1="14.9606" y1="23.622" x2="15.25" y2="23.3326" width="0.1524" layer="1"/>
+<wire x1="14.5034" y1="23.622" x2="15.0368" y2="23.622" width="0.1524" layer="1"/>
+<wire x1="15.25" y1="23.4088" x2="15.25" y2="22.3025" width="0.1524" layer="1"/>
+<wire x1="15.0368" y1="23.622" x2="15.25" y2="23.4088" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$31">
 <contactref element="R1" pad="1"/>
