@@ -16,7 +16,7 @@ wash_count_lookup = {0x4e:30, 0x4d:29, 0x4c:28, 0x4b:27, 0x4a:26, 0x49:25, 0x48:
 
 THIS_VERSION_NUMBER = '0.1.0'
 MAIN_WINDOW_WIDTH = 600
-MAIN_WINDOW_HEIGHT = 380
+MAIN_WINDOW_HEIGHT = 360
 PADDING = 10
 HEIGHT_CONNECT_LF = 50
 discord_link_url = "https://raw.githubusercontent.com/dekuNukem/daytripper/master/resources/discord_link.txt"
@@ -278,7 +278,7 @@ dump_button.place(x=20, y=0, width=260)
 restore_button = Button(dump_lf, text="Restore from file to this cassette...", command=load_from_file)
 restore_button.place(x=290, y=0, width=260)
 
-updates_lf = LabelFrame(root, text="Updates", width=MAIN_WINDOW_WIDTH - PADDING*2, height=HEIGHT_CONNECT_LF*1.5)
+updates_lf = LabelFrame(root, text="Updates", width=MAIN_WINDOW_WIDTH - PADDING*2, height=HEIGHT_CONNECT_LF*1.2)
 updates_lf.place(x=PADDING, y=290)
 
 def check_app_update():
