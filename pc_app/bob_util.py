@@ -136,9 +136,6 @@ def make_bob_dump_filename():
 def fw_update_click(what):
     webbrowser.open('https://github.com/dekuNukem/daytripper/blob/master/advanced_usage.md#usb-firmware-updates')
 
-def check_firmware_update():
-    pass
-
 def serial_connect():
     global fw_ver_string
     global bin_dict
@@ -281,24 +278,50 @@ dump_button.place(x=20, y=0, width=260)
 restore_button = Button(dump_lf, text="Restore from file to this cassette...", command=load_from_file)
 restore_button.place(x=290, y=0, width=260)
 
-
 updates_lf = LabelFrame(root, text="Updates", width=MAIN_WINDOW_WIDTH - PADDING*2, height=HEIGHT_CONNECT_LF*1.5)
 updates_lf.place(x=PADDING, y=290)
+
+def check_app_update():
+    update_result = check_update.get_pc_app_update_status(THIS_VERSION_NUMBER)
+    if update_result == 0:
+        app_update_str_label.config(text='This app (' + str(THIS_VERSION_NUMBER) + '): Up to date', fg='black', bg='gray95')
+        app_update_str_label.unbind("<Button-1>")
+    elif update_result == 1:
+        app_update_str_label.config(text='This app (' + str(THIS_VERSION_NUMBER) + '): Update available! Click me!', fg='black', bg='orange', cursor="hand2")
+        app_update_str_label.bind("<Button-1>", update_click)
+    elif update_result == 2:
+        app_update_str_label.config(text='This app (' + str(THIS_VERSION_NUMBER) + '): Unknown', fg='black', bg='gray95')
+        app_update_str_label.unbind("<Button-1>")
 
 app_update_str_label = Label(master=updates_lf)
 app_update_str_label.place(x=PADDING, y=5)
 app_update_str_label.config(text='This app: Unknown', fg='black', bg='gray95')
 app_update_str_label.unbind("<Button-1>")
 
+def check_firmware_update():
+    global fw_ver_string
+    fw_ver_string = fw_ver_string.replace('FW V', '').replace('\r', '').replace('\n', '')
+    fw_result = check_update.get_firmware_update_status(fw_ver_string)
+    if fw_result == 0:
+        firmware_update_str_label.config(text='Firmware (' + str(fw_ver_string) +'): Up to date', fg='black',bg='gray95')
+        firmware_update_str_label.unbind("<Button-1>")
+    elif fw_result == 1:
+        firmware_update_str_label.config(text='Firmware (' + str(fw_ver_string) +'): Update available! Click me!', fg='black', bg='orange', cursor="hand2")
+        firmware_update_str_label.bind("<Button-1>", fw_update_click)
+    else:
+        firmware_update_str_label.config(text='Firmware: Unknown', fg='black', bg='gray95')
+        firmware_update_str_label.unbind("<Button-1>")
+
 firmware_update_str_label = Label(master=updates_lf)
-firmware_update_str_label.place(x=PADDING, y=25)
+firmware_update_str_label.place(x=300, y=5)
 firmware_update_str_label.config(text='Firmware: Unknown', fg='black', bg='gray95')
 firmware_update_str_label.unbind("<Button-1>")
-
 
 def update_click(event):
     webbrowser.open('https://github.com/dekuNukem/daytripper/releases')
 
 serial_dropdown_refresh()
+
+check_app_update()
 
 root.mainloop()
