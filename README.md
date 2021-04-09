@@ -48,7 +48,7 @@ Daan Tech quoted several benefits of Bob Cassettes:
 
 * Exact needed quantity is dispensed, less waste.
 
-* 2-Stage dispensing. Detergent first, rinse aid at later stage.
+* 2-stage dispensing. Detergent first, rinse aid at later stage.
 
 * Made from recycled plastic, and can be recycled again.
 
@@ -90,7 +90,7 @@ At the receptacle, we can see the connector for the PCB, as well as two hoses to
 
 Notice there are only 4 wires going into the machine. Coupled with the fact that Bob needs to read the cassette to determine how many washes are left, and write to update it after a wash, I had a pretty good guess of what that mystery PCB contains.
 
-The answer is an **I2C EEPROM**, a popular type of non-volatile memory that holds a small amount of information. EEPROMs retain whatever inside even after losing power, can be very cheap, but are rather slow at writing, making them perfect to hold small configuration data in embedded systems.
+The answer is an **I2C EEPROM**, a popular type of non-volatile memory that holds a small amount of information. EEPROMs retain whatever's inside even after losing power, can be very cheap, but are rather slow at writing, making them perfect to hold small configuration data in embedded systems.
 
 To settle it once and for all, I extracted the PCB from the casing by melting the plastic with a soldering iron. A bit messy, and I probably should have used a dremel, but I did't have one.
 
@@ -108,13 +108,13 @@ Looking at the [datasheet](resources/FT24Cxxx.pdf), 24C02 can only hold 256 *Byt
 
 So my plan now is to read what's inside the EEPROM. It seemed that a special connector is needed, but after rummaging around the parts bin, I found that it fits into a USB-A female socket just fine! Although I had to insulate the metal case so it won't short on the PCB contacts.
 
-I found a leftover board from [pimping my microwave](https://github.com/dekuNukem/pimp_my_microwave), and quickly threw together this contraption to read the EEPROM:
+I found a leftover board from [pimping my microwave](https://github.com/dekuNukem/pimp_my_microwave), and quickly threw together a contraption to read the EEPROM:
 
 ![Alt text](resources/pics/pmm.jpeg)
 
 It would just read all 256 bytes and print them over serial, and I wrote a short [Python script](/bin_dump/bob_dump.py) to save them as a `.bin` file.
 
-Here is a quick look at whats inside a Pop cassette, with 25 washes left:
+Here is a quick look at whats inside a Pop cassette, with 26 washes left:
 
 ![Alt text](resources/pics/dump.png)
 
@@ -153,7 +153,9 @@ A bit perplexed, I tried several other values. In the end, it seems that the map
 |     ...     |              |
 |      0      |     0x50     |
 
-So to reset the cassette, all I have to do is **reset that byte to 0x4e**, easy enough!
+Not sure why they did it this way, but anyway!
+
+To reset the cassette to 30 washes, all I have to do is **set that byte to 0x4e**, easy enough!
 
 With the simple EEPROM chip, standard 0.1 inch contacts spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard, guess they reckoned that it wasn't worth the trouble. Well, less work for me too!
 
