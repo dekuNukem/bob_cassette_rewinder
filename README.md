@@ -1,4 +1,4 @@
-# Bob Cassette Rewinder: Defeating Dishwasher DRM for 1/75 Operating Cost
+# Bob Cassette Rewinder: Hacking Dishwasher DRM for 1/75 Operating Cost
 
 How I defeated the detergent cassette DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/), to refill it for 1/75 of the cost of buying new.
 
@@ -300,3 +300,32 @@ I then popped the cassette back, as expected, Bob reads it having full 30 washes
 I did a wash, and the resulting dishes are just as clean as before, nothing seemed different, except I'm now paying *75 times less* for the privilege! Job done!
 
 ## Finishing Up
+
+We are almost done! Everything's coming together, but as I will refill the cartridge frequently in the future, I do want to make a proper gadget to renew a cassette at the push of a button, instead of using the flying wire contraption earlier.
+
+So I quickly designed a circuit board, and hand-soldered a prototype:
+
+![Alt text](resources/pics/pcb.png)
+
+The board simply plugs into the cassette. When detected, `CART OK` LED will light up, and then I just have to press the `RENEW` button.
+
+![Alt text](resources/pics/top.jpeg)
+
+
+The microcontroller will reset the EEPROM, `DONE` LED will light up, and now I can refill and re-use the cassette for next to nothing!
+
+## Conclusion and Thoughts
+
+In this side project, I...
+
+* Identified the chip inside the Bob cassette
+
+* Dumped the data and figured out how to reset the counter
+
+* Investigated alternative detergent options
+
+* Performed cost analysis
+
+* Did a test run with commercial detergents
+
+* Designed a circuit board to easily renew the cassette.
