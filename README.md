@@ -1,6 +1,6 @@
-# Bob Cassette Rewinder: Defeating Dishwasher DRM for 1/30 Operating Cost
+# Bob Cassette Rewinder: Defeating Dishwasher DRM for 1/75 Operating Cost
 
-How I defeated the detergent cassette DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/), to refill it for 1/30 of the cost of buying new.
+How I defeated the detergent cassette DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/), to refill it for 1/75 of the cost of buying new.
 
 ![Alt text](resources/pics/title.jpeg)
 
@@ -12,7 +12,7 @@ Back in Jan 2021, I watched Techmoan review the [Bob Dishwasher](https://www.you
 
 He seemed to be quite impressed, mentioning its ease of setup and use. I liked the idea myself too, and ordered one soon afterwards.
 
-It arrived after a 2-months wait, and overall I'm very happy with it. It fits on my kitchen top, has just enough space for my dishes, and works just fine. No problems.
+It arrived after a 2-months wait, and overall I'm very happy with it. It fits on my kitchen top, has enough space for my dishes, uses a tiny amount of water, and overall works just fine. No problems.
 
 ## Bob Cassettes
 
@@ -64,6 +64,8 @@ Over a year of daily washes, it would have cost **£174 ($242)** in Bob cassette
 
 It is clear that Daan Tech are banking on the convenience of subscription models. Now I'm sure a lot of people would have no problem with that, but personally, I can think of a few better uses of my £174 than on dishwasher detergents.
 
+Another point to consider is what happens if they went bust? No more cassettes, and now you have a fancy paperweight, like so many silly smart appliances before it.
+
 ## Alternatives
 
 Credit where credit's due, Daan Tech didn't completely lock down the machine with Bob cassettes. Once empty, you *can* leave it there and add detergents manually. However, they strongly suggest against this, quoting a few drawbacks:
@@ -76,7 +78,7 @@ Credit where credit's due, Daan Tech didn't completely lock down the machine wit
 
 * Limescale might develop over time and damage the machine.
 
-Those are all valid points as well, and I do enjoy the ease of use of the cassettes. That's why I made it a priority to investigate how it works.
+It is clear that this dishwasher was designed with Bob cassettes in mind, and I do enjoy their set-and-forget simplicity. That's why I made it a priority to investigate how it works.
 
 ## A Closer Look
 
@@ -90,7 +92,7 @@ At the receptacle, we can see the connector for the PCB, as well as two hoses to
 
 Notice there are only 4 wires going into the machine. Coupled with the fact that Bob needs to read the cassette to determine how many washes are left, and write to update it after a wash, I had a pretty good guess of what that mystery PCB contains.
 
-The answer is an **I2C EEPROM**, a popular type of non-volatile memory that holds a small amount of information. EEPROMs retain whatever's inside even after losing power, can be very cheap, but are rather slow at writing, making them perfect to hold small configuration data in embedded systems.
+The answer is an **I2C EEPROM**, a popular type of non-volatile memory. EEPROMs retain whatever's inside even after losing power, and are very cheap, making them perfect at holding small configuration data in embedded systems.
 
 To settle it once and for all, I extracted the PCB from the casing by melting the plastic with a soldering iron. A bit messy, and I probably should have used a dremel, but I did't have one.
 
@@ -161,5 +163,138 @@ With the simple EEPROM chip, standard 0.1 inch contacts spacing, one-byte counte
 
 ## Now what?
 
-Now I can rewind the Bob Cassette and reuse it again, but 
+Now I can reset the Bob Cassette counter, what should I refill it *with*? After all, this whole endeavor would be pointless if they really do have some secret sauce in there that can't be found anywhere else.
 
+Of course, Daan Tech themselves sure wish you don't play around with the cassettes:
+
+![Alt text](resources/pics/refill.png)
+
+![Alt text](resources/pics/refill1.png)
+
+So what exactly *is* in those cassettes? Fortunately, they did provide some details in the user manual:
+
+----
+
+![Alt text](resources/pics/popinfo.png)
+
+----
+
+It's easy to see they kept things a bit vague to discourage loonies like me, but we can still extract some useful information out of it:
+
+* Pop Cassette has two tanks
+
+* Tank 1 contains 130mL of washing detergent, mainly Sodium Hydroxide (NaOH) and Etidronic Acid, less than 5% concentration.
+
+* Tank 2 contains 35mL of rinsing liquid, also less than 5% concentration.
+
+As the names suggest, detergent helps to break down grease and clean the dishes, while rinse aid reduces water streaking and improve drying performance. [Technology Connections did a video](https://www.youtube.com/watch?v=_rBO8neWw04) about this topic, so give it a watch!
+
+I also wanted to find out how much detergent Bob actually uses at each stage of wash, so I did a express wash on Bob, and collected and weighed the waste water at each stage. Its water usage is as follows:
+
+* 1000mL washing
+
+* 650mL to wash off the detergents
+
+* 1200mL Rinsing
+
+Overall, less than 3L of water for an entire load! Very efficient!
+
+I can now calculate the **detergent** concentration:
+
+* 130mL Tank / 30 washes = 4.33mL per wash
+
+* 4.33mL detergent per 1000mL water = **0.433% concentration, or 1:231 dilution**.
+
+Similarly for **rinse aid**:
+
+* 35mL Tank / 30 washes = 1.17mL per wash
+
+* 1.17mL rinse aid per 1000mL water = **0.117% concentration, or 1:855 dilution**.
+
+## A Clean Getaway
+
+With those information, I can begin searching for similar dishwasher liquids on the Internet.
+
+I first tried "Concentrated Dishwasher Detergent", which returned a lot of supermarket dishwasher gel, not quite what I want. But it quickly led to something much more promising.
+
+The magic word appears to be: **`Commercial Dishwasher Detergent & Rinse Aid`** from **Catering supply** websites.
+
+A quick search showed quite a few very reasonably priced 5L detergents & rinse aids:
+
+![Alt text](resources/pics/jantex.png)
+
+Of course, the question now becomes *which one do I pick?* Fortunately, all chemical products in UK comes with a `Safety Data Sheet` by regulation, which contains the composition and concentration of what's inside. This way, I can compare an unknown detergent with Bob Cassette and get a rough idea of how close it is.
+
+Looking at the top-left one, the cheapest, [its instruction](https://www.nisbets.co.uk/jantex-dishwasher-detergent-5-litre/cf976) states:
+
+![Alt text](resources/pics/cheap.png)
+
+The detergent dilution ration from my earlier calculation was 1:231, right in the ballpark. Looking the data sheet:
+
+![Alt text](resources/pics/sheet.png)
+
+Similar composition and concentration too! Both less than 5%.
+
+Moving on to the cheapest [rinse aid](https://www.nisbets.co.uk/jantex-dishwasher-rinse-aid-5-litre/cf977):
+
+![Alt text](resources/pics/rinse.png)
+
+Again, spot on. So there you go! Perfectly good substitutes for the detergents inside Bob cassettes.
+
+Of course, I do realize that the chemical composition might not be 100% same, at least according to the label. But those bulk detergents are for use in professional commercial kitchens, so they are unlikely to be weak stuff. And just wait until we get to the cost analysis!
+
+## Cost Showdown
+
+Now comes the good part, let's work out how much I save by using bulk commercial detergents.
+
+### Detergent
+
+* £5.99 ex-VAT, £7.2 with VAT
+
+* 5000mL / 4.33 mL per wash = 1154 washes
+
+* £7.2 / 1154 = 0.62p per wash
+
+### Rinse aid
+
+* £6.29 ex-VAT, £7.6 with VAT
+
+* 5000mL / 1.17 mL per wash = 4273 washes
+
+* £7.6 / 4273 = 0.018p per wash
+
+----
+
+With that, the **total cost per wash** would be:
+
+0.62p + 0.018p = **0.638p**, or **1 US cent**!
+
+We know from earlier that Bob Cassettes costs **48p (67c) per wash**.
+
+The cost saving is absolutely staggering, refilling it yourself is **75 times cheaper**!
+
+What's more, the 5L detergent can last well over **3 years** of daily wash, while the rinse aid can last almost **12 years**! Over those time you would have spent £2088 on Bob cassettes, and who knows if the manufacture will even be around then.
+
+----
+
+Of course, this calculation really is the best-case scenario, it didn't account for shipping of the bulk detergents, and they might go bad before all gets used up. But even considering those possibilities, 1 to 2p per wash should be easily achievable, which is still almost 30 times cheaper. It's a no brainer to refill your Bob Cassette if you can.
+
+## Testing it Out
+
+I went out and bought 2 jugs of detergent and rinse aid:
+
+![Alt text](resources/pics/bottles.jpeg)
+
+I picked them up locally, so I didn't have to pay shipping. The total came to around £17.
+
+Refilling the cassette is easy, I taped over the PCB window to prevent liquid getting in, and injected the detergents into the cassette with a syringe with blunt needle, poking through the one-way membrane.
+
+![Alt text](resources/pics/fill.jpeg)
+
+I then popped the cassette back, as expected, Bob reads it having full 30 washes left:
+
+![Alt text](resources/pics/30.jpeg)
+
+I did a wash, and the dishes are just as clean as before, nothing seemed different, except I'm now paying *70 times less* for the privilege! Job done!
+
+## 
