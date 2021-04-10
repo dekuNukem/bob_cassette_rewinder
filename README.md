@@ -136,7 +136,7 @@ So I put the cassette back, had another wash, dumped it again, and compared the 
 
 Voilà, there it is! Only one byte at address `0xa1` is different, and it went down from 0x4A to 0x49 while going from 26 to 25 washes.
 
-Doing some interpolation, it seems that that byte starts from 0x4e at 30 washes, and goes down from there.
+Doing some interpolation, it seems that byte starts from 0x4e at 30 washes, and goes down from there.
 
 I changed it to 0x3f, which should be 15 washes, and put it back. This is what happened:
 
@@ -157,13 +157,13 @@ A bit perplexed, I tried several other values. In the end, it seems that the map
 
 Not sure why they did it this way, but anyway!
 
-To reset the cassette to 30 washes, all I have to do is **set that byte to 0x4e**, easy enough!
+To reset the cassette to 30 washes, all I have to do is **set that byte back to 0x4e**, easy enough!
 
 With the simple EEPROM chip, standard 0.1 inch contacts spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard, guess they reckoned that it wasn't worth the trouble. Well, less work for me too!
 
 ## Now what?
 
-Now I can reset the Bob Cassette counter, what should I refill it *with*? After all, this whole endeavor would be pointless if they really do have some secret sauce in there that can't be found anywhere else.
+It's great now that I can reset the Bob Cassette counter, but what should I refill it *with*? After all, this whole endeavor would be pointless if they really do have some secret sauce in there that can't be found anywhere else.
 
 Of course, Daan Tech themselves sure wish you don't play around with the cassettes:
 
@@ -189,7 +189,7 @@ It's easy to see they kept things a bit vague to discourage loonies like me, but
 
 As the names suggest, detergent helps to break down grease and clean the dishes, while rinse aid reduces water streaking and improve drying performance. [Technology Connections did a video](https://www.youtube.com/watch?v=_rBO8neWw04) about this topic, so give it a watch!
 
-I also wanted to find out how much detergent Bob actually uses at each stage of wash, so I did a express wash on Bob, and collected and weighed the waste water at each stage. Its water usage is as follows:
+I also wanted to find out how much detergent Bob actually uses at each stage of wash, so I did a express wash on Bob, and weighed the waste water at each stage. Its water usage is as follows:
 
 * 1000mL washing
 
@@ -199,15 +199,17 @@ I also wanted to find out how much detergent Bob actually uses at each stage of 
 
 Overall, less than 3L of water for an entire load! Very efficient!
 
+----
+
 I can now calculate the **detergent** concentration:
 
-* 130mL Tank / 30 washes = 4.33mL per wash
+* 130mL tank / 30 washes = 4.33mL per wash
 
 * 4.33mL detergent per 1000mL water = **0.433% concentration, or 1:231 dilution**.
 
 Similarly for **rinse aid**:
 
-* 35mL Tank / 30 washes = 1.17mL per wash
+* 35mL tank / 30 washes = 1.17mL per wash
 
 * 1.17mL rinse aid per 1000mL water = **0.117% concentration, or 1:855 dilution**.
 
@@ -225,11 +227,11 @@ A quick search showed quite a few very reasonably priced 5L detergents & rinse a
 
 Of course, the question now becomes *which one do I pick?* Fortunately, all chemical products in UK comes with a `Safety Data Sheet` by regulation, which contains the composition and concentration of what's inside. This way, I can compare an unknown detergent with Bob Cassette and get a rough idea of how close it is.
 
-Looking at the top-left one, the cheapest, [its instruction](https://www.nisbets.co.uk/jantex-dishwasher-detergent-5-litre/cf976) states:
+Looking at the cheapest detergent (top-left), [its instruction](https://www.nisbets.co.uk/jantex-dishwasher-detergent-5-litre/cf976) states:
 
 ![Alt text](resources/pics/cheap.png)
 
-The detergent dilution ration from my earlier calculation was 1:231, right in the ballpark. Looking the data sheet:
+The dilution ratio from my earlier calculation was 1:231, right in the ballpark. Looking the data sheet:
 
 ![Alt text](resources/pics/sheet.png)
 
@@ -265,7 +267,7 @@ Now comes the good part, let's work out how much I save by using bulk commercial
 
 ----
 
-With that, the **total cost per wash** would be:
+With that, the **total cost per wash** is:
 
 0.62p + 0.018p = **0.638p**, or **1 US cent**!
 
@@ -295,6 +297,6 @@ I then popped the cassette back, as expected, Bob reads it having full 30 washes
 
 ![Alt text](resources/pics/30.jpeg)
 
-I did a wash, and the dishes are just as clean as before, nothing seemed different, except I'm now paying *70 times less* for the privilege! Job done!
+I did a wash, and the resulting dishes are just as clean as before, nothing seemed different, except I'm now paying *75 times less* for the privilege! Job done!
 
-## 
+## Finishing Up
