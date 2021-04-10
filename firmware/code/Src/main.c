@@ -71,7 +71,12 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
+#define POP_CASSETTE 0
+#define ROCK_CASSETTE 1
+#define UNKNOWN_CASSETTE 2
+
 volatile uint8_t is_done;
+uint8_t sig1, sig2, cassette_type;
 
 /* USER CODE END PV */
 
@@ -92,9 +97,9 @@ static void MX_IWDG_Init(void);
 
 void set_version(void)
 {
-	fw_version_major = 0;
-	fw_version_minor = 1;
-	fw_version_patch = 0;
+    fw_version_major = 0;
+    fw_version_minor = 1;
+    fw_version_patch = 0;
 }
 
 int fputc(int ch, FILE *f)
@@ -181,13 +186,35 @@ int main(void)
       is_done = 0;
     }
 
+    // if DONE button is pressed
     uint8_t button_result = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
-
     if(i2c_scan_result == 0 && button_result == 1 && is_done == 0)
     {
-      // change the byte here
-      eeprom_write(0xa1, 0x4e);
-      printf("done!\n");
+      sig1 = eeprom_read(0x90);
+      sig2 = eeprom_read(0x98);
+
+      if(sig1 == 0x43 && sig2 == 0x65) // Classique
+        cassette_type = POP_CASSETTE;
+      else if(sig1 == 0x45 && sig2 == 0x6e) // Classique
+        cassette_type = ROCK_CASSETTE;
+      else
+        cassette_type = UNKNOWN_CASSETTE;
+
+      if(cassette_type == UNKNOWN_CASSETTE) // flashes CART OK LED and exit
+      {
+        for (int i = 0; i < 21; ++i)
+        {
+          HAL_GPIO_TogglePin(LED_CARTOK_GPIO_Port, LED_CARTOK_Pin);
+          HAL_IWDG_Refresh(&hiwdg);
+          HAL_Delay(100);
+        }
+        continue;
+      }
+
+      if(cassette_type == POP_CASSETTE)
+        eeprom_write(0xa1, 0x4e); // 30 washes
+      else if (cassette_type == POP_CASSETTE)
+        eeprom_write(0xa1, 0x51); // 1 wash
       HAL_GPIO_WritePin(LED_DONE_GPIO_Port, LED_DONE_Pin, GPIO_PIN_RESET);
       is_done = 1;
     }
