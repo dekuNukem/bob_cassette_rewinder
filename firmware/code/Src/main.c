@@ -99,7 +99,7 @@ void set_version(void)
 {
     fw_version_major = 0;
     fw_version_minor = 1;
-    fw_version_patch = 0;
+    fw_version_patch = 1;
 }
 
 int fputc(int ch, FILE *f)
@@ -213,7 +213,7 @@ int main(void)
 
       if(cassette_type == POP_CASSETTE)
         eeprom_write(0xa1, 0x4e); // 30 washes
-      else if (cassette_type == POP_CASSETTE)
+      else if (cassette_type == ROCK_CASSETTE)
         eeprom_write(0xa1, 0x51); // 1 wash
       HAL_GPIO_WritePin(LED_DONE_GPIO_Port, LED_DONE_Pin, GPIO_PIN_RESET);
       is_done = 1;
