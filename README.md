@@ -1,6 +1,6 @@
 # Bob Cassette Rewinder: Hacking Dishwasher DRM for 1/75 Operating Cost
 
-How I defeated the detergent cassette DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/), to refill it for 1/75 of the cost of buying new.
+How I defeated the detergent cartridge DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/) to refill it for 1/75 of the cost of buying new.
 
 ![Alt text](resources/pics/title.jpeg)
 
@@ -13,6 +13,8 @@ Back in Jan 2021, I watched Techmoan review the [Bob Dishwasher](https://www.you
 He seemed to be quite impressed, mentioning its ease of setup and use. I liked the idea myself too, and ordered one soon afterwards.
 
 It arrived after a 2-months wait, and overall I'm very happy with it. It fits on my kitchen top, has enough space for my dishes, uses a tiny amount of water, and overall works just fine. No problems.
+
+It is also internet-connected (of course), but I never let it online. Why in the world does a dishwasher needs internet anyway?
 
 ## Bob Cassettes
 
@@ -50,7 +52,7 @@ Daan Tech quoted several benefits of Bob Cassettes:
 
 * 2-stage dispensing. Detergent first, rinse aid at later stage.
 
-* Made from recycled plastic, and can be recycled again.
+* Made from recycled plastic, and can be mailed back and reused.
 
 ## Outrageous Cost
 
@@ -62,9 +64,11 @@ With shipping and VAT added, it costs a whopping **£43 ($60) for 90 washes**! T
 
 Over a year of daily washes, it would have cost **£174 ($242)** in Bob cassettes alone! Imagine paying that much recurring cost for a dishwasher!
 
+And remember its internet connectivity? Yep, the whole reason is that it can reorder more cassettes automatically when it runs low, just like those wretched HP inkjet printers.
+
 It is clear that Daan Tech are banking on the convenience of subscription models. Now I'm sure a lot of people would have no problem with that, but personally, I can think of a few better uses of my £174 than on dishwasher detergents.
 
-Another point to consider is what happens if they went bust? No more cassettes, and now you have a fancy paperweight, like so many silly smart appliances before it.
+Another point to consider is what happens if they went bust? No more cassettes, and now you have a fancy paperweight, like so many unnecessarily-smart appliances before it.
 
 ## Alternatives
 
@@ -134,11 +138,11 @@ So I put the cassette back, had another wash, dumped it again, and compared the 
 
 ![Alt text](resources/pics/diff.png)
 
-Voilà, there it is! Only one byte at address `0xa1` is different, and it went down from 0x4A to 0x49 while going from 26 to 25 washes.
+Voilà, there it is! Only one byte is different at address `0xa1`, and it went down from 0x4A to 0x49 while going from 26 to 25 washes.
 
 Doing some interpolation, it seems that byte starts from 0x4e at 30 washes, and goes down from there.
 
-I changed it to 0x3f, which should be 15 washes, and put it back. This is what happened:
+I changed it to 0x3f, which should be 15 washes, and put it back. This happened:
 
 ![Alt text](resources/pics/111.jpeg)
 
@@ -269,17 +273,17 @@ Now comes the good part, let's work out how much I save by using bulk commercial
 
 With that, the **total cost per wash** is:
 
-0.62p + 0.018p = **0.638p**, or **1 US cent**!
+0.62p + 0.018p = **0.638p**, or **0.87 US cent**!
 
 We know from earlier that Bob Cassettes costs **48p (67c) per wash**.
 
-The cost saving is absolutely staggering, refilling it yourself is **75 times cheaper**!
+Therefore, refilling it yourself is more than **75 times cheaper**! The cost saving is absolutely staggering,
 
-What's more, the 5L detergent can last well over **3 years** of daily wash, while the rinse aid can last almost **12 years**! Over those time you would have spent £2088 on Bob cassettes, and who knows if the manufacture will even be around then.
+What's more, the 5L detergent can last well over **3 years** of daily wash, while the rinse aid can last almost **12 years**! Over those time you would have spent £2088 on Bob cassettes, and who knows if they will even be around then.
 
 ----
 
-Of course, this calculation really is the best-case scenario, it didn't account for shipping of the bulk detergents, and they might go bad before all gets used up. But even considering those possibilities, 1 to 2p per wash should be easily achievable, which is still almost 30 times cheaper. It's a no brainer to refill your Bob Cassette if you can.
+Of course, this calculation really is the best-case scenario, it didn't account for shipping of the detergents, and they might go bad before all gets used up. But even considering those possibilities, 1 to 2p per wash should be easily achievable, which is still almost 30 times cheaper. It's a no brainer to refill your Bob Cassette if you can.
 
 ## Testing it Out
 
@@ -299,33 +303,80 @@ I then popped the cassette back, as expected, Bob reads it having full 30 washes
 
 I did a wash, and the resulting dishes are just as clean as before, nothing seemed different, except I'm now paying *75 times less* for the privilege! Job done!
 
-## Finishing Up
+## Bob Rewinder Board
 
-We are almost done! Everything's coming together, but as I will refill the cartridge frequently in the future, I do want to make a proper gadget to renew a cassette at the push of a button, instead of using the flying wire contraption earlier.
+Everything's coming together nicely! But as I will refill the cartridge frequently in the future, I do want to make a proper gadget to renew a cassette at the push of a button, instead of using the flying wire contraption earlier.
 
-So I quickly designed a circuit board, and hand-soldered a prototype:
+So I quickly designed a circuit board, christened **Bob Rewinder**, and hand-soldered a prototype:
 
 ![Alt text](resources/pics/pcb.png)
 
-The board simply plugs into the cassette. When detected, `CART OK` LED will light up, and then I just have to press the `RENEW` button.
+Bob Rewinder simply plugs into the cassette. When detected, `CART OK` LED will light up, and then I just have to press the `RENEW` button.
 
 ![Alt text](resources/pics/top.jpeg)
 
+The microcontroller will reset the EEPROM, `DONE` LED will light up, and I can then refill and re-use the cassette for next to nothing!
 
-The microcontroller will reset the EEPROM, `DONE` LED will light up, and now I can refill and re-use the cassette for next to nothing!
+## Thoughts and Conclusions
 
-## Conclusion and Thoughts
+In this project, I wanted to explore the possibility of refilling and reusing Bob cassettes so I can preserve its set-and-forget convenience at a fraction of the cost.
 
-In this side project, I...
+In the process, I...
 
-* Identified the chip inside the Bob cassette
+* Identified the chip inside the Bob cassette.
 
-* Dumped the data and figured out how to reset the counter
+* Dumped the data and figured out how to reset the counter.
 
-* Investigated alternative detergent options
+* Calculated Bob's detergent usage and concentration.
 
-* Performed cost analysis
+* Researched alternative detergent options.
 
-* Did a test run with commercial detergents
+* Performed cost analysis.
+
+* Did a test run with commercial detergents.
 
 * Designed a circuit board to easily renew the cassette.
+
+Looking back, nothing was particularly difficult, but it did involve a lot of topics, and I learned a lot about dishwasher cycles and detergents in the process, probably more than I would have liked :)
+
+-------
+
+What I find ironic is, Daan Tech isn't shy about their ["positive cycle"](https://daan.tech/en/daan-positive-cycle/) of environmentally friendly practices, while having no problem selling you single-use cassettes at 75x of the price that lasts only 30 washes. The only justification is that you are *supposed* to mail them all the way back to France so they can be refilled (and sold again for an outrageous price).
+
+If they truly wanted to cut down on single-use plastics, what's wrong with user-refillable detergent compartments like every other full-size and commercial dishwashers? That sure seem a lot less hassle than mailing plastic cartridges back-and-forth around the world.
+
+Despite the DRM and warnings about not to refill the cassettes yourself, they even admitted themselves that the cassettes can be reused **hundreds of times**:
+
+![Alt text](resources/pics/single.png)
+
+They even mentioned how conventional detergent plastic bottles is bad for the environment, while the cassettes themselves only last 30 washes and uses way more plastic and electronics.
+
+The more I think of it, the more I can draw parallel between Bob cassettes and those overpriced DRM-enabled inkjet cartridges, often costing more than the printer itself. It wouldn't be surprising if Daan Tech took some inspirations from there.
+
+---
+
+In the end, I'm glad I tamed another totally unnecessary subscription-based internet-connected "smart" device, and managed to reuse and refill the cartridge for 1/75 the cost of buying new.
+
+Personally, the biggest effect is I no longer have to worry about using Bob at all. There used to be a constant niggle in the back of my head about getting the most out of each wash, because once it runs out, I'm in for a long wait and expensive bill. Now that the cost is so low, I find myself using it much more liberally whenever I want, often multiple times a day.
+
+Despite my lengthy rants, I actually really like the dishwasher itself. It is quiet, water-efficient, fast, compact, looks great, requires no plumbing, and perfect for small homes. Funny how once DRM-based nickel-and-diming is out of the equation, Bob is actually excellent at its job.
+
+## Other Stuff
+
+I've done a few other fun projects over the years, feel free to check them out:
+
+[duckyPad: Do-It-All Mechanical Macropad](https://github.com/dekuNukem/daytripper): A 15-key mechanical macropad with hot-swap, RGB, and sophisticated multi-line scripting.
+
+[Pimp My Microwave](https://github.com/dekuNukem/pimp_my_microwave): Fixing my microwave by grafting an RGB mechanical keyboard to it!
+
+[Daytripper: Hide-my-windows Laser Tripwire](https://github.com/dekuNukem/daytripper): Saves the day while you slack off!
+
+[exixe: Miniture Nixie Tube driver module](https://github.com/dekuNukem/exixe): Eliminate the need for vintage chips and multiplexing circuits.
+
+[From Aduino to STM32](https://github.com/dekuNukem/STM32_tutorials): A detailed tutorial to get you started with STM32 development.
+
+[List of all my repos](https://github.com/dekuNukem?tab=repositories)
+
+## Questions or Comments?
+
+Please feel free to [open an issue](https://github.com/dekuNukem/bob_cassette_rewinder/issues), ask in the [official duckyPad discord](https://discord.gg/4sJCBx5), DM me on discord `dekuNukem#6998`, or email `dekuNukem`@`gmail`.`com` for inquires.
