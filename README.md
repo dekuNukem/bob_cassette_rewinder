@@ -1,5 +1,9 @@
 # Bob Cassette Rewinder: Hacking Dishwasher DRM for 1/75 Operating Cost
 
+[Get Bob Rewinder](https://www.tindie.com/products/dekuNukem/bob-rewinder/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [User Manual](user_manual.md)
+
+---
+
 How I defeated the detergent cartridge DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/) to refill it for 1/75 of the cost of buying new.
 
 ![Alt text](resources/pics/title.jpeg)
@@ -163,7 +167,7 @@ Not sure why they did it this way, but anyway!
 
 To reset the cassette to 30 washes, all I have to do is **set that byte back to 0x4e**, easy enough!
 
-With the simple EEPROM chip, standard 0.1 inch contacts spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard, guess they reckoned that it wasn't worth the trouble. Well, less work for me too!
+With the simple EEPROM chip, standard 0.1 inch contact spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard, guess they reckoned that it wasn't worth the trouble. Well, less work for me too!
 
 ## Now what?
 
@@ -223,7 +227,7 @@ With those information, I can begin searching for similar dishwasher liquids on 
 
 I first tried "Concentrated Dishwasher Detergent", which returned a lot of supermarket dishwasher gel, not quite what I want. But it quickly led to something much more promising.
 
-The magic word appears to be: **`Commercial Dishwasher Detergent & Rinse Aid`** from **Catering supply** websites.
+The magic word appears to be: **`Commercial Dishwasher Detergent & Rinse Aid`** from **Catering supplies** websites.
 
 A quick search showed quite a few very reasonably priced 5L detergents & rinse aids:
 
@@ -251,7 +255,7 @@ Of course, I do realize that the chemical composition might not be 100% same, at
 
 ## Cost Showdown
 
-Now comes the good part, let's work out how much I save by using bulk commercial detergents.
+Now comes the good part, let's work out how much I save by using commercial detergents.
 
 ### Detergent
 
@@ -293,7 +297,8 @@ I went out and bought 2 jugs of detergent and rinse aid:
 
 I picked them up locally, so I didn't have to pay shipping. The total came to around £17.
 
-Refilling the cassette is easy, I taped over the PCB window to prevent liquid getting in, and injected the detergents into the cassette with a syringe with blunt needle, poking through the one-way membrane.
+Refilling the cassette is easy, I taped over the PCB window to prevent liquid getting in, and injected the detergents into the cassette with a syringe with blunt needle, poking through the one-way membrane. **`WARNING`**: See [this guide](user_manual.md) for more details if you plan to do it yourself.
+
 
 ![Alt text](resources/pics/fill.jpeg)
 
@@ -311,11 +316,11 @@ So I quickly designed a circuit board, christened **Bob Rewinder**, and hand-sol
 
 ![Alt text](resources/pics/pcb.png)
 
-Bob Rewinder simply plugs into the cassette. When detected, `CART OK` LED will light up, and then I just have to press the `RENEW` button.
+Bob Rewinder simply plugs into the cassette:
 
 ![Alt text](resources/pics/top.jpeg)
 
-The microcontroller will reset the EEPROM, `DONE` LED will light up, and I can then refill and re-use the cassette for next to nothing!
+Pressing the `RENEW` button will reset the EEPROM, and I can then refill and re-use the cassette for next to nothing!
 
 ## Thoughts and Conclusions
 
@@ -341,7 +346,7 @@ Looking back, nothing was particularly difficult, but it did involve a lot of to
 
 -------
 
-What I find ironic is, Daan Tech isn't shy about their ["positive cycle"](https://daan.tech/en/daan-positive-cycle/) of environmentally friendly practices, while having no problem selling you single-use cassettes at 75x of the price that lasts only 30 washes. The only justification is that you are *supposed* to mail them all the way back to France so they can be refilled (and sold again for an outrageous price).
+What I find ironic is, Daan Tech isn't shy about their ["positive cycle"](https://daan.tech/en/daan-positive-cycle/) of environmentally friendly practices, while having no problem selling you single-use cassettes at 75x of the price that lasts only 30 washes. The only justification is that you are *supposed* to mail them all the way back to France so they can be refilled (and of course, sold again).
 
 If they truly wanted to cut down on single-use plastics, what's wrong with user-refillable detergent compartments like every other full-size and commercial dishwashers? That sure seem a lot less hassle than mailing plastic cartridges back-and-forth around the world.
 
@@ -349,7 +354,7 @@ Despite the DRM and warnings about not to refill the cassettes yourself, they ev
 
 ![Alt text](resources/pics/single.png)
 
-They even mentioned how conventional detergent plastic bottles is bad for the environment, while the cassettes themselves only last 30 washes and uses way more plastic and electronics.
+They also mentioned how conventional detergent plastic bottles is bad for the environment, while the cassettes themselves only last 30 washes and uses way more plastic and electronics.
 
 The more I think of it, the more I can draw parallel between Bob cassettes and those overpriced DRM-enabled inkjet cartridges, often costing more than the printer itself. It wouldn't be surprising if Daan Tech took some inspirations from there.
 
@@ -357,9 +362,15 @@ The more I think of it, the more I can draw parallel between Bob cassettes and t
 
 In the end, I'm glad I tamed another totally unnecessary subscription-based internet-connected "smart" device, and managed to reuse and refill the cartridge for 1/75 the cost of buying new.
 
-Personally, the biggest effect is I no longer have to worry about using Bob at all. There used to be a constant niggle in the back of my head about getting the most out of each wash, because once it runs out, I'm in for a long wait and expensive bill. Now that the cost is so low, I find myself using it much more liberally whenever I want, often multiple times a day.
+By doing so, the biggest change is I no longer have to worry about using Bob at all. There used to be a constant niggle in the back of my head about getting the most out of each wash, because once it runs out, I'm in for a long wait and expensive bill. Now that the cost is so low, I find myself using it much more liberally whenever I want, often multiple times a day.
 
 Despite my lengthy rants, I actually really like the dishwasher itself. It is quiet, water-efficient, fast, compact, looks great, requires no plumbing, and perfect for small homes. Funny how once DRM-based nickel-and-diming is out of the equation, Bob is actually excellent at its job.
+
+## I want one too!
+
+I have made a few extra Bob Rewinder boards, you can [get it here](https://www.tindie.com/products/dekuNukem/bob-rewinder/).
+
+For instructions on how to use it, [click me!](user_manual.md)
 
 ## Other Stuff
 
@@ -379,4 +390,4 @@ I've done a few other fun projects over the years, feel free to check them out:
 
 ## Questions or Comments?
 
-Please feel free to [open an issue](https://github.com/dekuNukem/bob_cassette_rewinder/issues), ask in the [official duckyPad discord](https://discord.gg/4sJCBx5), DM me on discord `dekuNukem#6998`, or email `dekuNukem`@`gmail`.`com` for inquires.
+Please feel free to [open an issue](https://github.com/dekuNukem/bob_cassette_rewinder/issues), ask in my [discord server](https://discord.gg/gyGFqD2vfP), DM me on discord `dekuNukem#6998`, or email `dekuNukem`@`gmail`.`com` for inquires.
