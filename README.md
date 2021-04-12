@@ -1,4 +1,4 @@
-# Bob Cassette Rewinder: Hacking Dishwasher DRM for 98.7% Cost Saving
+# Bob Cassette Rewinder: Hacking Detergent DRM for 98.7% Cost Saving
 
 [Get Bob Rewinder](https://www.tindie.com/products/dekuNukem/bob-rewinder/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [User Manual](user_manual.md)
 
