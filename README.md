@@ -1,6 +1,6 @@
 # Bob Cassette Rewinder: Hacking Detergent DRM for 98.7% Cost Saving
 
-[Get Bob Rewinder](https://www.tindie.com/products/dekuNukem/bob-rewinder/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [User Manual](user_manual.md)
+[Get Bob Rewinder](https://www.tindie.com/products/23316/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [User Manual](user_manual.md)
 
 ---
 
@@ -368,7 +368,7 @@ Despite my lengthy rants, I actually really like the dishwasher itself. It is qu
 
 ## I want one too!
 
-I have made a few extra Bob Rewinder boards, you can [get it here](https://www.tindie.com/products/dekuNukem/bob-rewinder/).
+I have made a few extra Bob Rewinder boards, you can [get it here](https://www.tindie.com/products/23316/).
 
 For instructions on how to use it, [click me!](user_manual.md)
 

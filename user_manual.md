@@ -1,6 +1,6 @@
 # Bob Cassette Rewinder User Manual
 
-[Get Bob Rewinder](https://www.tindie.com/products/dekuNukem/bob-rewinder/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [Main Page](README.md)
+[Get Bob Rewinder](https://www.tindie.com/products/23316/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [Main Page](README.md)
 
 ---
 
