@@ -1,10 +1,10 @@
-# Bob Cassette Rewinder: Hacking Dishwasher DRM for 1/75 Operating Cost
+# Bob Cassette Rewinder: Hacking Dishwasher DRM for 98.7% Cost Saving
 
 [Get Bob Rewinder](https://www.tindie.com/products/dekuNukem/bob-rewinder/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [User Manual](user_manual.md)
 
 ---
 
-How I defeated the detergent cartridge DRM of [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/) to refill it for 1/75 of the cost of buying new.
+How I defeated [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/)'s detergent cartridge DRM to refill it at 1/75 of the cost of buying new.
 
 ![Alt text](resources/pics/title.jpeg)
 
@@ -281,7 +281,7 @@ With that, the **total cost per wash** is:
 
 We know from earlier that Bob Cassettes costs **48p (67c) per wash**.
 
-Therefore, refilling it yourself is more than **75 times cheaper**! The cost saving is absolutely staggering,
+Therefore, refilling it yourself is more than **75 times cheaper**, resulting in a massive **98.7&** cost saving compared to buying new!
 
 What's more, the 5L detergent can last well over **3 years** of daily wash, while the rinse aid can last almost **12 years**! Over those time you would have spent £2088 on Bob cassettes, and who knows if they will even be around then.
 

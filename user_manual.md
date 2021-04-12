@@ -80,7 +80,6 @@ Here's what I got:
 
 ![Alt text](resources/pics/bottles.jpeg)
 
-
 ## Reset the Bob Cassette
 
 When your Bob Cassette is empty, remove it from the machine, wipe off any liquids, and insert the Bob Rewinder as shown:
@@ -117,7 +116,7 @@ With label facing you, rinse aid goes into **LEFT** tank, detergent goes into **
 
 To start...
 
-* Get your syringe ready, preferably with a blunt needle.
+* Get your syringe ready, preferably with a thick blunt needle.
 
 * A bigger syringe would mean less repeats, I find 30mL just about right.
 
