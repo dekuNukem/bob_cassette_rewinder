@@ -82,7 +82,7 @@ Credit where credit's due, Daan Tech didn't completely lock down the machine wit
 
 * Dosing can be tricky, as most tablets, pods, and liquids are for full-size dishwashers.
 
-* Muti-stage dosing impossible, can't add rise aid after main wash.
+* Multi-stage dosing impossible, can't add rise aid after main wash.
 
 * Limescale might develop over time and damage the machine.
 
@@ -102,7 +102,7 @@ Notice there are only 4 wires going into the machine. Coupled with the fact that
 
 The answer is an **I2C EEPROM**, a popular type of non-volatile memory. EEPROMs retain whatever's inside even after losing power, and are very cheap, making them perfect at holding small configuration data in embedded systems.
 
-To settle it once and for all, I extracted the PCB from the casing by melting the plastic with a soldering iron. A bit messy, and I probably should have used a dremel, but I did't have one.
+To settle it once and for all, I extracted the PCB from the casing by melting the plastic with a soldering iron. A bit messy, and I probably should have used a dremel, but I didn't have one.
 
 ![Alt text](resources/pics/melt.jpeg)
 
@@ -112,7 +112,7 @@ A closer look at the PCB confirmed my suspicion:
 
 It's simply a 24C02 EEPROM with 4.7K pull-ups on I2C lines, a bypass cap, and some diodes, probably for reverse-insertion protection.
 
-Looking at the [datasheet](resources/FT24Cxxx.pdf), 24C02 can only hold 256 *Bytes* of data, so I guess there probably isn't much going on, but we'll need to dump its contents to be sure.
+Looking at the [datasheet](resources/FT24Cxxx.pdf), 24C02 can only hold 256 *bytes* of data, so I guess there probably isn't much going on, but we'll need to dump its contents to be sure.
 
 ## Bob the Dumper
 
@@ -281,7 +281,7 @@ With that, the **total cost per wash** is:
 
 We know from earlier that Bob Cassettes costs **48p (67c) per wash**.
 
-Therefore, refilling it yourself is more than **75 times cheaper**, resulting in a massive **98.7&** cost saving compared to buying new!
+Therefore, refilling it yourself is more than **75 times cheaper**, resulting in a massive **98.7%** cost saving compared to buying new!
 
 What's more, the 5L detergent can last well over **3 years** of daily wash, while the rinse aid can last almost **12 years**! Over those time you would have spent £2088 on Bob cassettes, and who knows if they will even be around then.
 
