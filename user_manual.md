@@ -6,6 +6,10 @@
 
 Welcome to your very own Bob Rewinder! Here's how to renew and refill your Bob Cassette.
 
+## Discord Chatroom
+
+Feel free to join our [discord server](https://discord.gg/gyGFqD2vfP) for latest announcements and discussions! I'll be around to help any questions you have.
+
 ## Go Offline!
 
 First of all, **disconnect your Bob from WiFi**!
