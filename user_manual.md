@@ -30,7 +30,7 @@ Read the product description and find out its **recommended usage**.
 
 ### DETERGENT Recommended Dosage
 
-Is should be suitable for Bob Cassette if **`ANY`** of those criteria is true:
+It should be suitable for Bob Cassette if **`ANY`** of those criteria is true:
 
 * Around or less than 4.33mL per 1L water
 
@@ -124,7 +124,9 @@ To start...
 
 * A bigger syringe would mean less repeats, I find 30mL just about right.
 
-* **Tape off the opening** for the PCB so liquid won't get inside.
+* [⚠️IMPORTANT] **Tape off the opening** for the connector so liquid won't get inside.
+
+* Otherwise any spill will corrode the chip and render the whole cassette useless.
 
 * Pour the detergent into a **wide-top container** so it can be easily drawn up with the syringe.
 
@@ -147,7 +149,6 @@ Better to **keep it slow at first** until you get hang of it.
 Wipe off any spills, remove the tape and insert the cassette back in. Bob should recognise it as full again. Happy dishwashing at 1/75 cost!
 
 ![Alt text](resources/pics/30.jpeg)
-
 
 ## Questions or Comments?
 
