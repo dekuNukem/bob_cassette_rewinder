@@ -8,6 +8,12 @@ How I defeated [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher
 
 ![Alt text](resources/pics/title.jpeg)
 
+## Get one / Discord
+
+To get your own Bob Rewinder, [visit here](https://www.tindie.com/products/23316/).
+
+Feel free to [join our discord](https://discord.gg/gyGFqD2vfP) for questions, discussions, and announcements.
+
 ## Introduction
 
 Back in Jan 2021, I watched Techmoan review the [Bob Dishwasher](https://www.youtube.com/watch?v=hVup5ya0WVQ) by Daan Tech. In short, Bob is a sleek and compact countertop dishwasher with a built-in water tank that can be filled by hand, requiring no plumbing and minimal space.
