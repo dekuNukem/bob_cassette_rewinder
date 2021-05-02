@@ -382,7 +382,7 @@ For instructions on how to use it, [click me!](user_manual.md)
 
 I've done a few other fun projects over the years, feel free to check them out:
 
-[duckyPad: Do-It-All Mechanical Macropad](https://github.com/dekuNukem/daytripper): A 15-key mechanical macropad with hot-swap, RGB, and sophisticated multi-line scripting.
+[duckyPad: Do-It-All Mechanical Macropad](https://github.com/dekuNukem/duckypad): A 15-key mechanical macropad with hot-swap, RGB, and sophisticated multi-line scripting.
 
 [Pimp My Microwave](https://github.com/dekuNukem/pimp_my_microwave): Fixing my microwave by grafting an RGB mechanical keyboard to it!
 
