@@ -28,8 +28,7 @@ It is also internet-connected (of course), but I never let it online. Why in the
 
 ## Bob Cassettes
 
-One of the headline features of Bob dishwasher is the [Bob Cassette](https://daan.tech/en/discover-bob-cassette/), an all-in-one detergentxor
- cartridge. Just pop it in and off you go! No need to manually measure and add detergent each wash, very convenient!
+One of the headline features of Bob dishwasher is the [Bob Cassette](https://daan.tech/en/discover-bob-cassette/), an all-in-one detergent cartridge. Just pop it in and off you go! No need to manually measure and add detergent each wash, very convenient!
 
 ![Alt text](resources/pics/bob.gif)
 
