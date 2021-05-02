@@ -1,10 +1,10 @@
-# Bob Cassette Rewinder: Hacking Detergent DRM for 98.7% Cost Saving
+# Bob Cassette Rewinder: Hacking Detergent DRM for 98% Cost Saving
 
 [Get Bob Rewinder](https://www.tindie.com/products/23316/) | [Official Discord](https://discord.gg/gyGFqD2vfP) | [User Manual](user_manual.md)
 
 ---
 
-How I defeated [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/)'s detergent cartridge DRM to refill it at 1/75 of the cost of buying new.
+How I defeated [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher/)'s detergent cartridge DRM to refill it at 1/60 of the cost of buying new.
 
 ![Alt text](resources/pics/title.jpeg)
 
@@ -283,7 +283,7 @@ Now comes the good part, let's work out how much I save by using commercial dete
 
 With that, the **total cost per wash** is:
 
-0.62p + 0.18p = **0.80p**, or **1.1 US cent**!
+0.62p + 0.18p = **0.80p**, or **1.1 US cents**!
 
 We know from earlier that Bob Cassettes costs **48p (67c) per wash**.
 
@@ -366,7 +366,7 @@ The more I think of it, the more I can draw parallel between Bob cassettes and t
 
 ---
 
-In the end, I'm glad I tamed another totally unnecessary subscription-based internet-connected "smart" device, and managed to reuse and refill the cartridge for 1/75 the cost of buying new.
+In the end, I'm glad I tamed another totally unnecessary subscription-based internet-connected "smart" device, and managed to reuse and refill the cartridge for 1/60 the cost of buying new.
 
 By doing so, the biggest change is I no longer have to worry about using Bob at all. There used to be a constant niggle in the back of my head about getting the most out of each wash, because once it runs out, I'm in for a long wait and expensive bill. Now that the cost is so low, I find myself using it much more liberally whenever I want, often multiple times a day.
 

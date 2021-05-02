@@ -146,7 +146,7 @@ To start...
 
 Better to **keep it slow at first** until you get hang of it.
 
-Wipe off any spills, remove the tape and insert the cassette back in. Bob should recognise it as full again. Happy dishwashing at 1/75 cost!
+Wipe off any spills, remove the tape and insert the cassette back in. Bob should recognise it as full again. Happy dishwashing at 1/60 cost!
 
 ![Alt text](resources/pics/30.jpeg)
 
