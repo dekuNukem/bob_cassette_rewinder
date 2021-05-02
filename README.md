@@ -28,7 +28,8 @@ It is also internet-connected (of course), but I never let it online. Why in the
 
 ## Bob Cassettes
 
-One of the headline features of Bob dishwasher is the [Bob Cassette](https://daan.tech/en/discover-bob-cassette/), an all-in-one detergent cartridge. Just pop it in and off you go! No need to manually measure and add detergent each wash, very convenient!
+One of the headline features of Bob dishwasher is the [Bob Cassette](https://daan.tech/en/discover-bob-cassette/), an all-in-one detergentxor
+ cartridge. Just pop it in and off you go! No need to manually measure and add detergent each wash, very convenient!
 
 ![Alt text](resources/pics/bob.gif)
 
@@ -169,7 +170,7 @@ A bit perplexed, I tried several other values. In the end, it seems that the map
 |     ...     |              |
 |      0      |     0x50     |
 
-Not sure why they did it this way, but anyway!
+[An eagle-eyed user flopp](https://github.com/dekuNukem/bob_cassette_rewinder/issues/8) pointed out the value at 0xa1 is calculated `Washes left` XOR `0x50`, thanks! Not sure why they did it like this, but anyway!
 
 To reset the cassette to 30 washes, all I have to do is **set that byte back to 0x4e**, easy enough!
 
