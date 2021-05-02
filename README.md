@@ -88,7 +88,7 @@ Credit where credit's due, Daan Tech didn't completely lock down the machine wit
 
 * Dosing can be tricky, as most tablets, pods, and liquids are for full-size dishwashers.
 
-* Multi-stage dosing impossible, can't add rise aid after main wash.
+* Multi-stage dosing impossible, can't add rinse aid after main wash.
 
 * Limescale might develop over time and damage the machine.
 
