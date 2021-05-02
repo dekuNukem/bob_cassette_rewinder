@@ -312,7 +312,7 @@ I then popped the cassette back, as expected, Bob reads it having full 30 washes
 
 ![Alt text](resources/pics/30.jpeg)
 
-I did a wash, and the resulting dishes are just as clean as before, nothing seemed different, except I'm now paying *75 times less* for the privilege! Job done!
+I did a wash, and the resulting dishes are just as clean as before, nothing seemed different, except I'm now paying *60 times less* for the privilege! Job done!
 
 ## Bob Rewinder Board
 
@@ -352,7 +352,7 @@ Looking back, nothing was particularly difficult, but it did involve a lot of to
 
 -------
 
-What I find ironic is, Daan Tech isn't shy about their ["positive cycle"](https://daan.tech/en/daan-positive-cycle/) of environmentally friendly practices, while having no problem selling you single-use cassettes at 75x of the price that lasts only 30 washes. The only justification is that you are *supposed* to mail them all the way back to France so they can be refilled (and of course, sold again).
+What I find ironic is, Daan Tech isn't shy about their ["positive cycle"](https://daan.tech/en/daan-positive-cycle/) of environmentally friendly practices, while having no problem selling you single-use cassettes at 60x of the price that lasts only 30 washes. The only justification is that you are *supposed* to mail them all the way back to France so they can be refilled (and of course, sold again).
 
 If they truly wanted to cut down on single-use plastics, what's wrong with user-refillable detergent compartments like every other full-size and commercial dishwashers? That sure seem a lot less hassle than mailing plastic cartridges back-and-forth around the world.
 
