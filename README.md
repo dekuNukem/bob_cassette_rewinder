@@ -269,31 +269,31 @@ Now comes the good part, let's work out how much I save by using commercial dete
 
 * 5000mL / 4.33 mL per wash = 1154 washes
 
-* £7.2 / 1154 = 0.62p per wash
+* £7.20 / 1154 = £0.0062 = 0.62p per wash
 
 ### Rinse aid
 
-* £6.29 ex-VAT, £7.6 with VAT
+* £6.29 ex-VAT, £7.60 with VAT
 
 * 5000mL / 1.17 mL per wash = 4273 washes
 
-* £7.6 / 4273 = 0.018p per wash
+* £7.60 / 4273 = £0.0018 = 0.18p per wash
 
 ----
 
 With that, the **total cost per wash** is:
 
-0.62p + 0.018p = **0.638p**, or **0.87 US cent**!
+0.62p + 0.18p = **0.80p**, or **1.1 US cent**!
 
 We know from earlier that Bob Cassettes costs **48p (67c) per wash**.
 
-Therefore, refilling it yourself is more than **75 times cheaper**, resulting in a massive **98.7%** cost saving compared to buying new!
+Therefore, refilling it yourself is more than **60 times cheaper**, resulting in a massive **98%** cost saving compared to buying new!
 
 What's more, the 5L detergent can last well over **3 years** of daily wash, while the rinse aid can last almost **12 years**! Over those time you would have spent £2088 on Bob cassettes, and who knows if they will even be around then.
 
 ----
 
-Of course, this calculation really is the best-case scenario, it didn't account for shipping of the detergents, and they might go bad before all gets used up. But even considering those possibilities, 1 to 2p per wash should be easily achievable, which is still almost 30 times cheaper. It's a no brainer to refill your Bob Cassette if you can.
+Of course, this calculation really is the best-case scenario, it didn't account for shipping of the detergents, and they might go bad before all gets used up. But even considering those possibilities, 2p per wash should be easily achievable, which is still almost 30 times cheaper. It's a no brainer to refill your Bob Cassette if you can.
 
 ## Testing it Out
 
