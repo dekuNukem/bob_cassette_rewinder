@@ -259,6 +259,20 @@ Again, spot on. So there you go! Perfectly good substitutes for the detergents i
 
 Of course, I do realize that the chemical composition might not be 100% same, at least according to the label. But those bulk detergents are for use in professional commercial kitchens, so they are unlikely to be weak stuff. And just wait until we get to the cost analysis!
 
+-----
+
+**UPDATE 2021-05-29:**
+
+Another eagle-eyed user ziviossi seems to have found the exact detergents used in the Pop and R'n'R cassette, with the same UFI number.
+
+[Pop detergent](https://heegeo.fr/370-hygiene-en-cuisine/378-lavage-et-rincage-de-la-vaisselle-en-machine/34933-.html), UFI: 9AD7-407V-T002-0TTS
+
+[R'n'R Cleaning Agent](https://sodiscol.fr/nos-produits/fiche-produit/0/17370/desty-liquide-lavage-toutes-eaux-5kg-ecolabel-53), UFI: P7D7-M0JG-G00K-AG7Q
+
+Click the links for more info and datasheets. [Backup copy here.](resources/offcial_detergents)
+
+-----
+
 ## Cost Showdown
 
 Now comes the good part, let's work out how much I save by using commercial detergents.
