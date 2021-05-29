@@ -150,6 +150,12 @@ Wipe off any spills, remove the tape and insert the cassette back in. Bob should
 
 ![Alt text](resources/pics/30.jpeg)
 
+## What about Rock'n'Roll Cassette?
+
+Rock'n'Roll contains a cleaning agent in the big compartment, and limescale remover in the small compartment. You can probably refill it with regular detergents and limescale remover liquid. 
+
+Bob Rewinder works with Rock'n'Roll Cassettes, and will reset it just fine.
+
 ## Questions or Comments?
 
 Please feel free to [open an issue](https://github.com/dekuNukem/bob_cassette_rewinder/issues), ask in my [discord server](https://discord.gg/gyGFqD2vfP), DM me on discord `dekuNukem#6998`, or email `dekuNukem`@`gmail`.`com` for inquires.
