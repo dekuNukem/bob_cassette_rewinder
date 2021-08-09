@@ -2,8 +2,8 @@ import json
 import socket
 import urllib.request
 
-pc_app_release_url = "https://api.github.com/repos/dekuNukem/duckypad/releases/latest"
-firmware_url = 'https://api.github.com/repos/dekuNukem/duckypad/contents/firmware?ref=master'
+pc_app_release_url = "https://api.github.com/repos/dekuNukem/bob_cassette_rewinder/releases/latest"
+firmware_url = 'https://api.github.com/repos/dekuNukem/bob_cassette_rewinder/contents/firmware?ref=master'
 
 def is_internet_available():
     try:
@@ -41,7 +41,7 @@ def get_firmware_update_status(current_version):
 	try:
 		file_list = json.loads(urllib.request.urlopen(firmware_url).read())
 		dfu_list = [x['name'] for x in file_list if 'name' in x and 'type' in x and x['type'] == 'file']
-		dfu_list = [d.replace('duckypad_v', '').replace('.dfu', '') for d in dfu_list if d.startswith('duckypad_v') and d.endswith('.dfu')]
+		dfu_list = [d.replace('bob_rewinder_v', '').replace('.dfu', '') for d in dfu_list if d.startswith('bob_rewinder_v') and d.endswith('.dfu')]
 		dfu_list.sort(key=lambda s: list(map(int, s.split('.'))))
 		this_version = versiontuple(current_version)
 		remote_version = versiontuple(dfu_list[-1])

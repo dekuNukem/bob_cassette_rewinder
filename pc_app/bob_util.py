@@ -22,7 +22,7 @@ HEIGHT_CONNECT_LF = 50
 discord_link_url = "https://raw.githubusercontent.com/dekuNukem/daytripper/master/resources/discord_link.txt"
 
 def open_user_manual_url():
-    webbrowser.open('https://github.com/dekuNukem/bob_cassette_rewinder')
+    webbrowser.open('https://github.com/dekuNukem/bob_cassette_rewinder/blob/master/user_manual.md')
 
 def open_discord_link():
     try:
@@ -32,7 +32,7 @@ def open_discord_link():
 
 def create_help_window():
     help_window = Toplevel(root)
-    help_window.title("Daytripper help")
+    help_window.title("Bob Rewinder utility help")
     help_window.geometry("280x130")
     help_window.resizable(width=FALSE, height=FALSE)
 
@@ -51,7 +51,7 @@ def ensure_dir(dir_path):
         os.mkdir(dir_path)
 
 root = Tk()
-root.title("Bob Cassette Utility v" + THIS_VERSION_NUMBER)
+root.title("Bob Rewinder Utility v" + THIS_VERSION_NUMBER)
 root.geometry(str(MAIN_WINDOW_WIDTH) + "x" + str(MAIN_WINDOW_HEIGHT))
 root.resizable(width=FALSE, height=FALSE)
 
@@ -170,7 +170,7 @@ def serial_connect():
             data = int(this_line.split(' ')[2])
             bin_dict[addr] = data
         if 'no bob cassette detected' in this_line:
-            messagebox.showerror("Error", "No bob cassette detected!")
+            messagebox.showerror("Error", "Bob Rewinder connected.\n\nHowever, no Bob Cassette detected!")
             return
 
     for i in range(len(bin_dict)):
