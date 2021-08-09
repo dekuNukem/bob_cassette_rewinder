@@ -146,7 +146,9 @@ To start...
 
 Better to **keep it slow at first** until you get hang of it.
 
-Wipe off any spills, remove the tape and insert the cassette back in. Bob should recognise it as full again. Happy dishwashing at 1/60 cost!
+Wipe off any spills, remove the tape and insert the cassette back in. 
+
+**Start a new wash** or **power cycle Bob**, it should recognise the cassette as full again. Happy dishwashing at 1/60 cost!
 
 ![Alt text](resources/pics/30.jpeg)
 
@@ -155,6 +157,46 @@ Wipe off any spills, remove the tape and insert the cassette back in. Bob should
 Rock'n'Roll contains a cleaning agent in the big compartment, and limescale remover in the small compartment. You can probably refill it with regular detergents and limescale remover liquid. 
 
 Bob Rewinder works with Rock'n'Roll Cassettes, and will reset it just fine.
+
+## Can I enable Write Protect (WP) to lock out wash count?
+
+Yes! But not very easy to do.
+
+By enabling Write Protect (WP), the memory chip will no longer accept any writes, effectively freezing the wash count. This is useful if you want to modify your Bob to use continuous feed of detergents from external tanks.
+
+To do it, you'll need to:
+
+#### Extract the PCB from a cassette
+
+* Make sure it has some washes left!
+
+* You can cut it out with a dremel, or melt the plastic with a soldering iron:
+
+![Alt text](resources/pics/melt.jpeg)
+
+* Be careful not to damage it!
+
+* The PCB should look like this:
+
+![Alt text](resources/pics/zoom.jpeg)
+
+#### Modify the Write Protect (WP) Pin
+
+When WP pin is connected to GND (or not connected at all), write protect is disabled.
+
+When WP pin is connected to VCC, write protect is enabled.
+
+On the PCB, WP is connected to GND. We'll need to disconnect it, and hook it up to VCC instead.
+
+The easiest way is to **melt the solder** on the WP pin, and **gently lift it up** off the pads so it is no longer making contact:
+
+![Alt text](resources/pics/lift.jpeg)
+
+Then, **gently** bend it towards the VCC pin, and bridge them together with a bit of solder:
+
+![Alt text](resources/pics/bend.jpeg)
+
+That's it! Insert the PCB into Bob **component side up**. The wash count will now be frozen, and you can use Bob for as long as you like!
 
 ## Questions or Comments?
 
