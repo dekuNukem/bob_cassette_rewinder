@@ -172,13 +172,15 @@ A simple PC app is available to dump / restore the content of your Bob Cassettes
 
 ### Find the COM Port
 
+Insert Bob Rewinder into a cassette, and plug it into your computer with a USB-C cable.
+
+Both `POWER` and `CART OK` LED should be illuminated.
+
 **`Right click`** on the start button, then select `Device Manager`:
 
 ![Alt text](resources/pics/start.png)
 
-Insert Bob Rewinder into a cassette, and plug it into your computer with a USB-C cable.
-
-In the `Ports (COM & LPT)` section, A new `USB Serial Device` should appear.
+In the `Ports (COM & LPT)` section, there should be a `USB Serial Device`.
 
 ![Alt text](resources/pics/devmgr.png)
 
@@ -192,7 +194,7 @@ Remember the number! **`COM4`** in this case. Yours might be different.
 
 ### "Untrusted App" Warning
 
-Launch the app by clicking **`bob_util.txt`**.
+Launch the app by clicking **`bob_util.exe`**.
 
 Your system might complain about this software being untrusted. This is because I haven't had the code digitally signed, which costs hundreds of dollars a year.
 
@@ -214,7 +216,7 @@ If everything goes well, it will read the cassette and display its content:
 
 You can then dump the cassette content to a file, or restore from a file to the cassette.
 
-Top tip: You can change the cassette type by restoring a corresponding EEPROM dump to it! For example, if you restore a Rock'n'Roll dump to a Pop cassette, it will become a R'n'R cassette and you can refill it and use it as such!
+Top tip: You can change the cassette type by restoring a corresponding EEPROM dump! For example, if you restore a Rock'n'Roll dump to a Pop cassette, it will become a R'n'R cassette and you can refill it and use it as such!
 
 [Here are some sample dumps that you can use](https://github.com/dekuNukem/bob_cassette_rewinder/raw/master/bin_dump/sample_bins.zip)
 
