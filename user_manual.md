@@ -214,6 +214,10 @@ If everything goes well, it will read the cassette and display its content:
 
 You can then dump the cassette content to a file, or restore from a file to the cassette.
 
+Top tip: You can change the cassette type by restoring a corresponding EEPROM dump to it! For example, if you restore a Rock'n'Roll dump to a Pop cassette, it will become a R'n'R cassette and you can refill it and use it as such!
+
+[Here are some sample dumps that you can use](https://github.com/dekuNukem/bob_cassette_rewinder/raw/master/bin_dump/sample_bins.zip)
+
 ## Can I enable Write Protect (WP) to lock out wash count?
 
 Yes! But not very easy to do.
