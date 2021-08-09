@@ -6,6 +6,14 @@
 
 Welcome to your very own Bob Rewinder! Here's how to renew and refill your Bob Cassette.
 
+## Table of Contents
+
+[Using Bob Rewinder](#go-offline)
+
+[Bob Rewinder Utility](#using-bob-rewinder-utility)
+
+[EEPROM Write Protect](#can-i-enable-write-protect-wp-to-lock-out-wash-count)
+
 ## Discord Chatroom
 
 Feel free to join our [discord server](https://discord.gg/gyGFqD2vfP) for latest announcements and discussions! I'll be around to help any questions you have.
@@ -157,6 +165,54 @@ Wipe off any spills, remove the tape and insert the cassette back in.
 Rock'n'Roll contains a cleaning agent in the big compartment, and limescale remover in the small compartment. You can probably refill it with regular detergents and limescale remover liquid. 
 
 Bob Rewinder works with Rock'n'Roll Cassettes, and will reset it just fine.
+
+## Using Bob Rewinder Utility
+
+A simple PC app is available to dump / restore the content of your Bob Cassettes.
+
+### Find the COM Port
+
+**`Right click`** on the start button, then select `Device Manager`:
+
+![Alt text](resources/pics/start.png)
+
+Insert Bob Rewinder into a cassette, and plug it into your computer with a USB-C cable.
+
+In the `Ports (COM & LPT)` section, A new `USB Serial Device` should appear.
+
+![Alt text](resources/pics/devmgr.png)
+
+Remember the number! **`COM4`** in this case. Yours might be different.
+
+### Download the Application
+
+[Head here to download the latest release](https://github.com/dekuNukem/bob_cassette_rewinder/releases/latest).
+
+* The software is in early stages of development. If you run into any problems, please don't hesitate to [open an issue](https://github.com/dekuNukem/bob_cassette_rewinder/issues), ask in the [official discord](https://discord.gg/gyGFqD2vfP), or contact me through `dekuNukem`@`gmail`.`com`.
+
+### "Untrusted App" Warning
+
+Launch the app by clicking **`bob_util.txt`**.
+
+Your system might complain about this software being untrusted. This is because I haven't had the code digitally signed, which costs hundreds of dollars a year.
+
+Please feel free to [review the code](https://github.com/dekuNukem/bob_cassette_rewinder/tree/master/pc_app). If you don't trust the app, you can also run `bob_util.py` script directly in Python3.
+
+Click `More info` and then `Run anyway`.
+
+![Alt text](resources/pics/defender.png)
+
+### Dump / Restore Bob Cassettes
+
+After the app has launched, press `Refresh` button, select the COM port with the correct number, and press `Connect`.
+
+![Alt text](resources/pics/selcom.png)
+
+If everything goes well, it will read the cassette and display its content:
+
+![Alt text](resources/pics/appwin.png)
+
+You can then dump the cassette content to a file, or restore from a file to the cassette.
 
 ## Can I enable Write Protect (WP) to lock out wash count?
 
