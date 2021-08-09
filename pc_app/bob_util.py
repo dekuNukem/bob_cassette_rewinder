@@ -134,7 +134,7 @@ def make_bob_dump_filename():
     return 'bobdump_' + current_time_str() + "_" + cassette_str[3:9] + '_' + cassette_type + "_" + str(washes_left_str) + "_washes_left"
 
 def fw_update_click(what):
-    webbrowser.open('https://github.com/dekuNukem/daytripper/blob/master/advanced_usage.md#usb-firmware-updates')
+    webbrowser.open('https://github.com/dekuNukem/bob_cassette_rewinder/blob/master/firmware_history.md')
 
 def serial_connect():
     global fw_ver_string
