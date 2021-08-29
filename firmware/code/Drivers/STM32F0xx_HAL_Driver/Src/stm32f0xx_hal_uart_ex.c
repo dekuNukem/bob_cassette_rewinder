@@ -428,7 +428,7 @@ HAL_StatusTypeDef HAL_UARTEx_StopModeWakeUpSourceConfig(UART_HandleTypeDef *huar
   /* Enable the Peripheral */
   __HAL_UART_ENABLE(huart);
 
-  /* Init tickstart for timeout managment*/
+  /* Init tickstart for timeout management*/
   tickstart = HAL_GetTick();
 
   /* Wait until REACK flag is set */
@@ -592,7 +592,7 @@ HAL_StatusTypeDef HAL_LIN_SendBreak(UART_HandleTypeDef *huart)
   */
 static void UARTEx_Wakeup_AddressConfig(UART_HandleTypeDef *huart, UART_WakeUpTypeDef WakeUpSelection)
 {
-  /* Check parmeters */
+  /* Check parameters */
   assert_param(IS_UART_WAKEUP_FROMSTOP_INSTANCE(huart->Instance));
   assert_param(IS_UART_ADDRESSLENGTH_DETECT(WakeUpSelection.AddressLength));
 

@@ -102,7 +102,7 @@ typedef struct
   *             01 : Abort (Abort user request on going)\n
   *             10 : Timeout\n
   *             11 : Error\n
-  *          b5     IP initilisation status\n
+  *          b5     IP initialisation status\n
   *             0  : Reset (IP not initialized)\n
   *             1  : Init done (IP initialized and ready to use. HAL I2C Init function called)\n
   *          b4     (not used)\n

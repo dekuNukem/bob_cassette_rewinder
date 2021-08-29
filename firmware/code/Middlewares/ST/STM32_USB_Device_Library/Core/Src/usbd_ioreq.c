@@ -170,7 +170,7 @@ USBD_StatusTypeDef  USBD_CtlContinueRx (USBD_HandleTypeDef  *pdev,
 }
 /**
 * @brief  USBD_CtlSendStatus
-*         send zero lzngth packet on the ctl pipe
+*         send zero length packet on the ctl pipe
 * @param  pdev: device instance
 * @retval status
 */
@@ -188,7 +188,7 @@ USBD_StatusTypeDef  USBD_CtlSendStatus (USBD_HandleTypeDef  *pdev)
 
 /**
 * @brief  USBD_CtlReceiveStatus
-*         receive zero lzngth packet on the ctl pipe
+*         receive zero length packet on the ctl pipe
 * @param  pdev: device instance
 * @retval status
 */

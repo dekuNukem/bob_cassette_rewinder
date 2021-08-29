@@ -183,7 +183,7 @@ HAL_StatusTypeDef HAL_IWDG_Init(IWDG_HandleTypeDef *hiwdg)
   assert_param(IS_IWDG_RELOAD(hiwdg->Init.Reload));
   assert_param(IS_IWDG_WINDOW(hiwdg->Init.Window));
 
-  /* Enable IWDG. LSI is turned on automaticaly */
+  /* Enable IWDG. LSI is turned on automatically */
   __HAL_IWDG_START(hiwdg);
 
   /* Enable write access to IWDG_PR, IWDG_RLR and IWDG_WINR registers by writing

@@ -4708,7 +4708,7 @@ void TIM_Base_SetConfig(TIM_TypeDef *TIMx, TIM_Base_InitTypeDef *Structure)
   }
 
   /* Generate an update event to reload the Prescaler 
-     and the repetition counter(only for TIM1 and TIM8) value immediatly */
+     and the repetition counter(only for TIM1 and TIM8) value immediately */
   TIMx->EGR = TIM_EGR_UG;
 }
 

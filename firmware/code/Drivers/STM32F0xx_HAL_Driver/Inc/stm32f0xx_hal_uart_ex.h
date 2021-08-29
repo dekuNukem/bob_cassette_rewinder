@@ -63,7 +63,7 @@
   */
 typedef struct
 {
-  uint32_t WakeUpEvent;        /*!< Specifies which event will activat the Wakeup from Stop mode flag (WUF).
+  uint32_t WakeUpEvent;        /*!< Specifies which event will activate the Wakeup from Stop mode flag (WUF).
                                     This parameter can be a value of @ref UART_WakeUp_from_Stop_Selection.
                                     If set to UART_WAKEUP_ON_ADDRESS, the two other fields below must
                                     be filled up. */

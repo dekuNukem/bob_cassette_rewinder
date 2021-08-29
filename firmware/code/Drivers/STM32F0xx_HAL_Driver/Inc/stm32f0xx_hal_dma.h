@@ -166,7 +166,7 @@ typedef struct __DMA_HandleTypeDef
   */ 
 #define HAL_DMA_ERROR_NONE          (0x00000000U)    /*!< No error             */
 #define HAL_DMA_ERROR_TE            (0x00000001U)    /*!< Transfer error       */
-#define HAL_DMA_ERROR_NO_XFER       (0x00000004U)    /*!< no ongoin transfer   */
+#define HAL_DMA_ERROR_NO_XFER       (0x00000004U)    /*!< no ongoing transfer   */
 #define HAL_DMA_ERROR_TIMEOUT       (0x00000020U)    /*!< Timeout error        */
 #define HAL_DMA_ERROR_NOT_SUPPORTED (0x00000100U)    /*!< Not supported mode */     
 /**

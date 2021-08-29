@@ -718,7 +718,7 @@ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, u
     huart->ErrorCode = HAL_UART_ERROR_NONE;
     huart->gState = HAL_UART_STATE_BUSY_TX;
 
-    /* Init tickstart for timeout managment*/
+    /* Init tickstart for timeout management*/
     tickstart = HAL_GetTick();
 
     huart->TxXferSize = Size;
@@ -803,7 +803,7 @@ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, ui
     huart->ErrorCode = HAL_UART_ERROR_NONE;
     huart->RxState = HAL_UART_STATE_BUSY_RX;
 
-    /* Init tickstart for timeout managment*/
+    /* Init tickstart for timeout management*/
     tickstart = HAL_GetTick();
 
     huart->RxXferSize = Size;
@@ -2295,7 +2295,7 @@ HAL_StatusTypeDef UART_CheckIdleState(UART_HandleTypeDef *huart)
   huart->ErrorCode = HAL_UART_ERROR_NONE;
 
 #if !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6)&& !defined(STM32F030xC)
-  /* Init tickstart for timeout managment*/
+  /* Init tickstart for timeout management*/
   tickstart = HAL_GetTick();
 
   /* TEACK and REACK bits in ISR are checked only when available (not available on all F0 devices).
