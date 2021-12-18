@@ -4374,18 +4374,18 @@ by exp-lbrs.ulp</description>
 <rectangle x1="1.016" y1="-2.794" x2="1.524" y2="-2.286" layer="51"/>
 <rectangle x1="3.556" y1="2.286" x2="4.064" y2="2.794" layer="51"/>
 <rectangle x1="3.556" y1="-2.794" x2="4.064" y2="-2.286" layer="51"/>
-<pad name="1" x="-3.81" y="-2.54" drill="1.016" shape="octagon"/>
-<pad name="2" x="-3.81" y="2.54" drill="1.016" shape="octagon"/>
-<pad name="3" x="-1.27" y="-2.54" drill="1.016" shape="octagon"/>
-<pad name="4" x="-1.27" y="2.54" drill="1.016" shape="octagon"/>
-<pad name="5" x="1.27" y="-2.54" drill="1.016" shape="octagon"/>
-<pad name="6" x="1.27" y="2.54" drill="1.016" shape="octagon"/>
-<pad name="7" x="3.81" y="-2.54" drill="1.016" shape="octagon"/>
-<pad name="8" x="3.81" y="2.54" drill="1.016" shape="octagon"/>
-<hole x="6.8" y="3" drill="2.2"/>
-<hole x="6.8" y="-3" drill="2.2"/>
-<hole x="-6.8" y="-3" drill="2.2"/>
-<hole x="-6.8" y="3" drill="2.1"/>
+<pad name="1" x="-3.81" y="-2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="2" x="-3.81" y="2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="3" x="-1.27" y="-2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="4" x="-1.27" y="2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="5" x="1.27" y="-2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="6" x="1.27" y="2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="7" x="3.81" y="-2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="8" x="3.81" y="2.54" drill="1.016" diameter="1.4224" shape="long" rot="R90"/>
+<hole x="6.6" y="3" drill="2.2"/>
+<hole x="6.6" y="-3" drill="2.2"/>
+<hole x="-6.6" y="-3" drill="2.2"/>
+<hole x="-6.6" y="3" drill="2.1"/>
 </package>
 </packages>
 <symbols>
