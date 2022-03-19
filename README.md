@@ -74,7 +74,7 @@ With shipping and VAT added, it costs a whopping **£43 ($60) for 90 washes**! T
 
 Over a year of daily washes, it would have cost **£174 ($242)** in Bob cassettes alone! Imagine paying that much recurring cost for a dishwasher!
 
-And remember its internet connectivity? Yep, the whole reason is that it can reorder more cassettes automatically when it runs low, just like those wretched HP inkjet printers.
+And remember its internet connectivity? Yep, the whole reason is that it can reorder more cassettes automatically when it runs low, just like those HP inkjet printers.
 
 It is clear that Daan Tech are banking on the convenience of subscription models. Now I'm sure a lot of people would have no problem with that, but personally, I can think of a few better uses of my £174 than on dishwasher detergents.
 
@@ -169,11 +169,11 @@ A bit perplexed, I tried several other values. In the end, it seems that the map
 |     ...     |              |
 |      0      |     0x50     |
 
-[An eagle-eyed user flopp](https://github.com/dekuNukem/bob_cassette_rewinder/issues/8) pointed out the value at 0xa1 is calculated as `Washes left` XOR `0x50`, thanks! Not sure why they did it like this, but anyway!
+[Eagle-eyed user flopp](https://github.com/dekuNukem/bob_cassette_rewinder/issues/8) pointed out the value at 0xa1 is calculated as `Washes left` XOR `0x50`, thanks! Not sure why they did it like this, but anyway!
 
 To reset the cassette to 30 washes, all I have to do is **set that byte back to 0x4e**, easy enough!
 
-With the simple EEPROM chip, standard 0.1 inch contact spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard, guess they reckoned that it wasn't worth the trouble. Well, less work for me too!
+With the simple EEPROM chip, standard 0.1 inch contact spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard. Well, less work for me too!
 
 ## Now what?
 
@@ -270,6 +270,12 @@ Another eagle-eyed user ziviossi seems to have found the exact detergents used i
 [R'n'R Cleaning Agent](https://sodiscol.fr/nos-produits/fiche-produit/0/17370/desty-liquide-lavage-toutes-eaux-5kg-ecolabel-53), UFI: P7D7-M0JG-G00K-AG7Q
 
 Click the links for more info and datasheets. [Backup copy here.](resources/offcial_detergents)
+
+**UPDATE 2022-03-19:**
+
+More information about the exact detergents are being investigated by **Hawk-v3**. Read about the details here:
+
+https://github.com/dekuNukem/bob_cassette_rewinder/issues/13
 
 -----
 
@@ -378,7 +384,7 @@ They also mentioned how conventional detergent plastic bottles is bad for the en
 
 The more I think of it, the more I can draw parallel between Bob cassettes and those overpriced DRM-enabled inkjet cartridges, often costing more than the printer itself. It wouldn't be surprising if Daan Tech took some inspirations from there.
 
----
+----
 
 In the end, I'm glad I tamed another totally unnecessary subscription-based internet-connected "smart" device, and managed to reuse and refill the cartridge for 1/60 the cost of buying new.
 
