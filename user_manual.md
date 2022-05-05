@@ -225,6 +225,7 @@ Top tip: You can change the cassette type by restoring a corresponding EEPROM du
 Yes! But not very easy to do.
 
 By enabling Write Protect (WP), the memory chip will no longer accept any writes, effectively freezing the wash count. This is useful if you want to modify your Bob to use continuous feed of detergents from external tanks.
+For more info on how to set up a continuous feed, check out [this doc](continuous_feed.md)
 
 To do it, you'll need to:
 
