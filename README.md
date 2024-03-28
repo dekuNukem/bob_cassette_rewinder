@@ -10,7 +10,7 @@ How I defeated [Bob Dishwasher](https://daan.tech/en/product/bob-mini-dishwasher
 
 ## Get one / Discord
 
-To get your own Bob Rewinder, [visit here](https://www.tindie.com/products/23316/).
+To get your own Bob Rewinder, [click me!](https://www.tindie.com/products/23316/)
 
 Feel free to [join our discord](https://discord.gg/gyGFqD2vfP) for questions, discussions, and announcements.
 
@@ -24,7 +24,7 @@ He seemed to be quite impressed, mentioning its ease of setup and use. I liked t
 
 It arrived after a 2-months wait, and overall I'm very happy with it. It fits on my kitchen top, has enough space for my dishes, uses a tiny amount of water, and overall works just fine. No problems.
 
-It is also internet-connected (of course), but I never let it online. Why in the world does a dishwasher needs internet anyway?
+It is also internet-connected (of course), but I never let it online. Why in the world does a dishwasher need internet anyway?
 
 ## Bob Cassettes
 
@@ -56,7 +56,7 @@ There are two types of Bob Cassettes:
 
 Daan Tech quoted several benefits of Bob Cassettes:
 
-* Simple to use, no need to add detergent every wash, less mess.
+* Simple to use, no need to add detergent manually every wash.
 
 * Exact needed quantity is dispensed, less waste.
 
@@ -66,7 +66,7 @@ Daan Tech quoted several benefits of Bob Cassettes:
 
 ## Outrageous Cost
 
-While those points are perfectly valid and I did enjoy using the cassettes, such convenience comes with a cost, and Daan Tech is more than happy to take it off your hands. Looking at [their website](https://daan.tech/en/product/compilation-pop-rock/), a 4-pack costs £29.90:
+While those points are perfectly valid and I did enjoy using the cassettes, such convenience comes with a cost, and Daan Tech is more than happy to take it off your hands. Looking at [their website](https://daan.tech/en/product/compilation-pop-rock/), a 4-pack costs £35:
 
 ![Alt text](resources/pics/cost.png)
 
@@ -76,7 +76,7 @@ Over a year of daily washes, it would have cost **£174 ($242)** in Bob cassette
 
 And remember its internet connectivity? Yep, the whole reason is that it can reorder more cassettes automatically when it runs low, just like those HP inkjet printers.
 
-It is clear that Daan Tech are banking on the convenience of subscription models. Now I'm sure a lot of people would have no problem with that, but personally, I can think of a few better uses of my £174 than on dishwasher detergents.
+It is clear that Daan Tech are banking on the convenience of subscription models. I'm sure a lot of people have no problem with that, but personally, I can think of a few better uses of my £174 than on dishwasher detergents.
 
 Another point to consider is what happens if they went bust? No more cassettes, and now you have a fancy paperweight, like so many unnecessarily-smart appliances before it.
 
@@ -173,7 +173,7 @@ A bit perplexed, I tried several other values. In the end, it seems that the map
 
 To reset the cassette to 30 washes, all I have to do is **set that byte back to 0x4e**, easy enough!
 
-With the simple EEPROM chip, standard 0.1 inch contact spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't try really hard. Well, less work for me too!
+With the simple EEPROM chip, standard 0.1 inch contact spacing, one-byte counter, and no error checking, it sure seems Daan Tech didn't really try very hard!
 
 ## Now what?
 
@@ -382,7 +382,7 @@ Despite the DRM and warnings about not to refill the cassettes yourself, they ev
 
 They also mentioned how conventional detergent plastic bottles is bad for the environment, while the cassettes themselves only last 30 washes and uses way more plastic and electronics.
 
-The more I think of it, the more I can draw parallel between Bob cassettes and those overpriced DRM-enabled inkjet cartridges, often costing more than the printer itself. It wouldn't be surprising if Daan Tech took some inspirations from there.
+The more I think of it, the more I can draw parallel between Bob cassettes and DRM-enabled inkjet cartridges, often costing more than the printer itself. It wouldn't be surprising if Daan Tech took some inspirations from there.
 
 ----
 
