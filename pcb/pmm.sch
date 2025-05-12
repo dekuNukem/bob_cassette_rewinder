@@ -3597,6 +3597,7 @@ by exp-lbrs.ulp</description>
 <part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X3" device="" package3d_urn="urn:adsk.eagle:package:22462/2"/>
 <part name="U$1" library="adafruit_changed" deviceset="PINHD1X2" device=""/>
+<part name="GND4" library="backplane" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3743,6 +3744,9 @@ by exp-lbrs.ulp</description>
 <attribute name="NAME" x="-69.85" y="27.305" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-69.85" y="38.1" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="GND4" gate="1" x="-86.36" y="30.48" smashed="yes">
+<attribute name="VALUE" x="-88.9" y="27.94" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -3809,6 +3813,11 @@ by exp-lbrs.ulp</description>
 <pinref part="JP2" gate="A" pin="1"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="-71.12" y1="0" x2="-86.36" y2="0" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="1" pin="2"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="-73.66" y1="33.02" x2="-86.36" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">

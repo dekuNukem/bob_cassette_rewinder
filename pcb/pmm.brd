@@ -877,6 +877,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="JP1" pad="8"/>
 <contactref element="JP3" pad="6"/>
 <contactref element="JP2" pad="1"/>
+<contactref element="U$1" pad="2"/>
 </signal>
 <signal name="+3V3">
 <polygon width="0.1524" layer="16" isolate="0.254">
@@ -1184,8 +1185,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <signal name="N$16">
 <contactref element="IC3" pad="10"/>
 <contactref element="U$1" pad="1"/>
-<wire x1="12.0822" y1="3.075" x2="12.0822" y2="2.1418" width="0.2032" layer="1"/>
-<wire x1="12.0822" y1="2.1418" x2="12.954" y2="1.27" width="0.2032" layer="1"/>
+<wire x1="12.0822" y1="3.075" x2="12.165" y2="3.075" width="0.2032" layer="1"/>
+<wire x1="12.954" y1="2.286" x2="12.165" y2="3.075" width="0.2032" layer="1"/>
+<wire x1="12.954" y1="2.286" x2="12.954" y2="1.27" width="0.2032" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
